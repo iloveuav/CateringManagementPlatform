@@ -1,0 +1,38 @@
+<!--miniprogram/pages/mysel/admin/admin.wxml-->
+<!--miniprogram/pages/index/index.wxml-->
+
+<view class="weclowBox">
+<text class="hello">> 欢迎</text>
+</view>
+<!-- ---------用户欢迎及个人信息展示卡片-------------------------------------- -->
+<!-- <view class="tap">
+<indexCard   allClass="{{allClass}}" >
+  </indexCard>
+</view> -->
+
+<!-- -----------------苏州各区卡片组件------------------------------------------ -->
+<view class="classCard">
+<scroll-view>
+<districtCard   objectArray="{{allCourseDemo}}" intoBtnName="进入" pageName="admin" >
+  </districtCard>
+</scroll-view>
+</view>
+<!-- ------------------------------------------------- -->
+<view>
+<scroll-view >
+</scroll-view>
+</view>
+
+
+<view class='item' >
+  <view class="title">更新数据</view>
+  <view class="detail2">
+    <button bindtap='getAllClient' class="updateCourseMess">
+   更新
+  </button>
+  </view>
+</view>
+
+<view class="treemapContainer">
+  <ec-canvas id="mychart-dom-pie2" canvas-id="mychart-pie2" ec="{{ ec }}"></ec-canvas>
+</view>

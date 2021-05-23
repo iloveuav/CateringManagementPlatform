@@ -1,0 +1,93 @@
+<!--miniprogram/pages/admin/setting/setting.wxml-->
+<view class='section'>
+	<view class='seciton-title'>设置公告</view>
+	<view class='item'>
+		<textarea class="noticeTextArea" maxlength="" type="emoji" bindinput="noticeChange" confirm-type="done" value='{{notice}}' placeholder="" />
+		<!-- <view class="btn-setNotice"  bindtap="updateNDA">设置</view> -->
+        <image src="../../../images/icon/editNotice.png" catchtap="confirmNotice" class="btn-setting" ></image>
+			</view>
+		</view>
+
+
+ <view class='section' >
+			<view class='seciton-title'>更换LOGO</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+					<block wx:for="{{1}}" wx:key="*this">
+						<view class="q-image-wrap">
+							<!-- handleImagePreview -->
+							<!-- <image class="q-image" src="{{localLogo}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image> -->
+
+
+
+							<view class="question-images">
+						<view class="q-image-wrap" >
+							<!-- handleImagePreview -->
+							<image class="now-image" src="{{localLogo}}" mode="aspectFill" data-idx="{{0}}" bindtap="looknowNDA"></image>	
+
+								<view class="black-image"  wx:if="{{localLogo==''}}" mode="aspectFill" data-idx="{{0}}" bindtap="looknowNDA"></view>
+						</view>
+				</view>
+
+						</view>
+					</block>
+				</view>
+				<image style="width:100rpx;height:100rpx;" src="../../../images/icon/upload.png" id="addimg1" bindtap="uploadLogo" ></image>
+			</view>
+
+      <image src="../../../images/icon/editbtn.png" class="btn-setting" catchtap="confirmLogo" ></image>
+		</view>
+
+
+
+     <view class='section' >
+			<view class='seciton-title'>更换首页公司图片</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+					<block wx:for="{{1}}" wx:key="*this">
+						<view class="q-image-wrap" >
+							<!-- handleImagePreview -->
+							<!-- <image class="q-image" src="{{localImage}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image> -->
+							<!-- <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view> -->
+
+								<view class="question-images">
+						<view class="q-image-wrap" >
+							<!-- handleImagePreview -->
+							<image class="now-image" src="{{localPic}}" mode="aspectFill" data-idx="{{0}}" bindtap="looknowNDA"></image>	
+							<!-- 黑色块 -->
+							<view class="black-image" wx:if="{{localPic==''}}" mode="aspectFill" data-idx="{{0}}" bindtap="looknowNDA"></view>	
+						</view>
+				</view>
+
+
+
+						</view>
+					</block>
+				</view>
+				<image style="width:100rpx;height:100rpx;" src="../../../images/icon/upload.png" id="addimg1" bindtap="uploadpic" ></image>
+			</view>
+
+      <image src="../../../images/icon/editbtn.png" class="btn-setting" catchtap="confirmPic" ></image>
+		</view>
+
+
+    <!-- <view class='section'>
+	<view class='seciton-title'>设置公司email</view>
+	<view class='item'>
+			<textarea class="emailTextArea" maxlength="" type="emoji" bindinput="emailChange" confirm-type="done" value='{{email}}' placeholder="填写email" />
+      <br/>
+			</view>
+		</view> -->
+
+		 <!-- <view class='section'>
+	<view class='item'>
+			<textarea class="emailTextArea" maxlength="" type="emoji" bindinput="emailPasswordChange" confirm-type="done" value='{{emailPassword}}' placeholder="填写email的授权码" />
+
+        <image src="../../../images/icon/editNotice.png" class="btn-setting" catchtap="confirmEmail" ></image>
+			</view>
+		</view> -->
+
+		
+		

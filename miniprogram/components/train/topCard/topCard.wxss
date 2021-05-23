@@ -1,0 +1,18 @@
+/* components/train/topCard/topCard.wxss */
+
+.topCard {
+  width: 100%;
+  display: flex;
+  border: 1px solid red;
+}
+
+
+.swiper {
+  position: absolute;
+  min-width: 220rpx;
+  margin-left: 60%;
+  right: 10rpx;
+  width: 190rpx;
+  height: 190rpx;
+  bottom: 150rpx;
+}

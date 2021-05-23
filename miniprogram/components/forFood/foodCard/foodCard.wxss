@@ -1,0 +1,201 @@
+/* components/playWhat/playWhat.wxss */
+/* components/card/card.wxss */
+
+.card-table-view{
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: white;
+  box-shadow: 0 0 10rpx #ccc;
+  border-radius:3%;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+.card-col-head{
+ display: flex;
+ flex-direction: row;
+  width: 95%;
+  flex-wrap: nowrap;
+  /* text-align: center; */
+  padding: 20rpx;
+  font-size: 30rpx;
+  color:black;
+  margin-top: 20rpx;
+
+}
+
+.card-col-content{
+  
+ flex-direction: row;
+  width: 95%;
+  flex-wrap: nowrap;
+  /* text-align: center; */
+  padding: 18rpx;
+  font-size: 30rpx;
+  color:black;
+  height: 420rpx;
+  
+ 
+}
+.sceneryName{
+  padding:0;
+  font-size: 30rpx;
+  color:black;
+  margin-left: 20rpx;
+  margin-top: 2rpx;
+}
+
+.money{
+  font-size: 30rpx;
+  color: red;
+  
+}
+
+.flyerintro{
+  font-size: 30rpx;
+  color:black;
+  padding: 10rpx;
+}
+
+
+
+.line{
+  background: #E0E3DA;
+  align-items: center;
+ width: 100%;
+ height: 5rpx;
+}
+
+
+
+.myicon{
+
+  width:150rpx;
+  height: 180rpx;
+  /* border-radius:50%; */
+}
+
+.time{
+   padding:0;
+  margin: auto;
+  font-size: 22rpx;
+  color:grey;
+  margin-top: 10rpx;
+}
+
+/* -----------------下面--------- */
+
+/* components/classCard.wxss */
+
+
+.swiper {
+
+  /* min-width: 420rpx; */
+  margin-left: 1%;
+  right: 10rpx;
+  width: 100%;
+  height: 450rpx;
+  bottom: 10rpx;
+  /* border: 1px solid black; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Card{
+  /* border: 1px solid black; */
+  background-color: white;
+  box-shadow: 0 0 10rpx rgb(160, 156, 156);
+  height: 92%;
+  width: 280rpx;
+  border-radius: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.img{
+  /* border: 1px solid black; */
+  height: 65%;
+  width: 95%;
+  margin: 5rpx;
+  border-radius: 30rpx 30rpx 30rpx 30rpx;
+  /* margin-bottom: 30rpx; */
+}
+
+.Title{
+  width: 100%;
+  text-align: center;
+  font-size: 35rpx;
+  color: #fff !important;
+  background: #5bc0de !important;
+  border-color: #46b8da !important;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+  /* margin-bottom: 20rpx; */
+}
+
+
+@keyframes closeDown {
+  form {
+    transform: translateY(0%);
+  }
+
+  to {
+    height: 0;
+    transform: translateY(110%);
+  }
+}
+
+
+.bottomText{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  /* flex-wrap: wrap; */
+  font-size: 25rpx;
+  /* text-align: center; */
+  /* width: 100rpx; */
+  height: 120rpx;
+  word-break:break-all;
+  align-items:flex-start;
+}
+
+
+  
+
+.toClass {
+  margin-top: 40rpx;
+  background-color: white;
+  border-radius: 100rpx;
+}
+
+.add_btn{
+  position: absolute;
+  bottom: 2rpx;
+  right: 10rpx;
+  
+  border-radius: 20rpx;
+  background-color: white;
+  box-shadow: 0 0 10rpx rgb(144, 196, 226);
+z-index: 999;
+font-size: 18rpx;
+width: 160rpx!important;
+height: 50rpx;
+
+}
+
+.checked{
+  background-color: rgb(130, 206, 209);
+  color:white;
+}
+
+.state{
+margin-left: 480rpx;
+margin-bottom: 12rpx;
+}

@@ -1,0 +1,156 @@
+<!--miniprogram/pages/AddEngClassContent/AddEngClassContent.wxml-->
+<view class='tab'>
+  <view class="top-btns">
+    <!-- <text class='fabu'>发布时间: {{tabdata.time_agree}}</text> -->
+    <view class="theme-item">
+      <view class="unRead" wx:if="{{unReadNum}}">
+        <text>{{unReadNum}}</text>
+      </view>
+      <text class="themeKey">菜品类别</text>
+      <input class="themeInput" bindinput="bindChange2" confirm-type="done" value='{{className}}' placeholder="eg:甜品"  placeholder-style="color:#fff;"/>
+    </view>  
+   
+<view class="chapter-item">
+    <view class="btn-item">
+      <text class="chapterKey" >商户ID</text>
+      <input class="input" type="number" bindinput="bindChange1" confirm-type="done" value='{{classId}}' placeholder="eg:1205155"/>
+    </view>
+
+    <view class="btn-item">
+      <text class="chapterKey" >商户名</text>
+      <input class="input" bindinput="bindChange3" confirm-type="done" value='{{chapterName}}' placeholder="eg:新梅园大酒店" />
+    </view>
+  </view>
+
+  </view>
+
+  
+</view>
+<view class='message'>
+  <view class='top_txt'>喂食前请确保上方信息填写正确</view>
+  <view class="historycon">
+
+   <view class="wordCard" wx:if="{{setTextImg}}">
+            <scroll-view style="height:100%">
+              <!-- <wordCard allItem="{{item.textImgArray}}" bindspeach="speach">
+              </wordCard> -->
+
+               <foodCard scenery="{{item}}" hotalArray="{{item.textImgArray}}" city="{{city}}" bindgetHotalId="getPKcityId"></foodCard>
+            </scroll-view>
+             </view>
+
+
+    <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" class="history" wx:for="{{centendata}}" wx:key='' bindtap="preimage">
+      <!-- 时间 -->
+      <view>
+        <text class='time'>{{item.time}}</text>
+      </view>
+      <block wx:if="{{item.is_show_right ==1}}">
+        <!-- 右边 -->
+        <view class='message-right'>
+          <!-- 文字消息还是图片消息 -->
+          <text wx:if='{{item.textimgTitle!=""}}' class='message_txtTitle'>{{item.textimgTitle}}</text>
+          <text wx:if='{{item.content!=""}}' class='message_txt'>{{item.content}}</text>
+          <text wx:if='{{item.textImgArray.length>0}}' class='message_txt'>上传一组{{item.textImgArray.length}}个图文</text>
+          <image wx:if='{{item.contentType=="img"}}' src='{{item.imgfile}}' class='new_imgtent'></image>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='message-left'>
+          <!-- <text wx:if='{{!item.src==""}}' class='message_txt'>{{item.content}}</text>
+          <image wx:if='{{item.src==""}}' src='{{item.src}}' class='new_imgtent'></image> -->
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+
+<view class="rightBtnBox" bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start"  style="{{translate}}">
+<view class="rightBtnItem">
+<image class="r-itemImgBox" catchtap="setFrontImg" src="../../../../images/button/addCoverBtn.png"></image>
+<view class="r-itemName" catchtap="setFrontImg">设置封面
+</view>
+</view>
+
+<view class="rightBtnItem">
+<image class="r-itemImgBox" catchtap="setInteract" src="../../../../images/button/addAnswerBtn.png"></image>
+<view class="r-itemName" catchtap="setInteract">新增互动</view>
+</view>
+
+<view class="rightBtnItem">
+<image class="r-itemImgBox" catchtap="setTextImg" src="../../../../images/button/addTextImg.png"></image>
+<view class="r-itemName" catchtap="setTextImg">新增菜品</view>
+</view>
+
+</view>
+<!-- left end -->
+
+  <!-- right -->
+<view class="setLBox">
+<button class="deleteChaBtn"  disabled="{{btnDie}}" catchtap="del">删除当前章节</button>
+</view>
+  <!-- right end -->
+
+<view class='hei' id="hei"></view>
+<!-- -------------设置互动参数区------------ -->
+<view class="setwaitData" style="height:{{btnBox}}rpx;width:{{btnBox}}rpx" wx:if="{{setwait}}">
+  <image src="/images/button/cancel2.png" style='position:absoluted;' class="cancel" catchtap="close"></image>
+  <view class="btnArrayBox">
+  <input bindinput="getbtnNum" type="number" class="modelBtn" confirm-type="done" value='{{}}' placeholder="输入按钮个数" placeholder-style="color:#318FFF;"/>
+  <view wx:for="{{btnNum-0}}" data-i="{{groupindex}}" wx:for-index="groupindex" bindtap='updateInteractData'>
+    <input bindinput='getInputValue' class="modelBtn" confirm-type="done" placeholder="我叫啥" placeholder-style="color:#318FFF;"/>
+  </view>
+  <input bindinput="getAnswer" class="modelBtn" style="border-color: red;" confirm-type="done" value='{{}}' placeholder="正确答案" placeholder-style="color:#318FFF;"/>
+  </view>
+  
+  <button class="answerModelSubmitBtn" catchtap="submitInteract">提交</button>
+  <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
+</view>
+<!-- ----------------设置参数区end--------------- -->
+
+<view class='hei' id="hei"></view>
+<!-- -------------设置菜品参数区------------ -->
+<view class="setwaitData" style="flex-direction: column; " wx:if="{{setTextImg==='1'}}">
+  <image src="/images/button/cancel2.png" style='position:absoluted;' class="cancel" catchtap="close"></image>
+  <view class="modelTitle">新增菜品</view>
+  <view wx:for="{{0}}" data-i="{{groupindex}}" wx:for-index="groupindex" bindtap='updateInteractData'>
+  </view>
+  <input bindinput='getTitle' style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{textimgTitle}}' placeholder="菜名" placeholder-style="color:#318FFF;" />
+  <input bindinput='getContent' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{message}}' placeholder="介绍" placeholder-style="color:#318FFF;" />
+   <input bindinput='getContent' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{message}}' placeholder="价格" placeholder-style="color:#318FFF;" />
+  <input bindinput='getSrc' placeholder-style="color:#318FFF;" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{imgUrl}}' placeholder="图片src（可为空）" />
+
+  <button class="modelSubmitBtn" catchtap="addOneItem">+1（不提交）</button>
+  <button class="modelSubmitBtn" catchtap="add">提交</button>
+  <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
+</view>
+<!-- ----------------设置图文参数区end--------------- -->
+<view class='hei' id="hei"></view>
+<!-- -------------设置封面区------------ -->
+<view class="setwaitData" style="flex-direction: column; " wx:if="{{setFrontImg}}">
+  <image src="/images/button/cancel2.png" style='position:absoluted;' class="cancel" catchtap="close"></image>
+   <view class="modelTitle">设置封面</view>
+  <view wx:for="{{0}}" data-i="{{groupindex}}" wx:for-index="groupindex" bindtap='updateInteractData'>
+  </view>
+  <input bindinput='getTitle' style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{textimgTitle}}' placeholder="请再次输入课程名以确认课程名" placeholder-style="color:#318FFF;"/>
+  <!-- <input bindinput='getContent' style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{message}}' placeholder="课程难度系数" /> -->
+  <input bindinput='getSrc' style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{imgUrl}}' placeholder="图片src（本地上传时可为空" placeholder-style="color:#318FFF;"/>
+
+  <button class="modelSubmitBtn" catchtap="add">提交</button>
+  <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
+</view>
+<!-- ----------------设置封面区end--------------- -->
+
+<view class='hei' id="hei"></view>
+
+<view class="sendmessage">
+<view class="addimgBox"> <image src="../../../../images/button/upload2.png" class="addimgBtn" bindtap='uploadimg'></image></view>
+ 
+  <textarea class="texeArea" maxlength="" type="emoji" bindinput="bindChange" confirm-type="done" value='{{message}}' placeholder="" />
+  <!-- <image src="/images/button/addbtn.png" class="addimg" catchtap="add"></image> -->
+  <view class="senMessBox"><button class="senMessButton" catchtap="add">发送 </button></view>
+   
+  
+  <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
+</view>

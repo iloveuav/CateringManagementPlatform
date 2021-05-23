@@ -1,0 +1,33 @@
+<!--index.wxml-->
+
+<view class="userinfo-login">
+	<view class="page-body">
+		<view class="page-body-wrapper">
+
+			<view class='section'>
+				<view class='seciton-title'>takePhoto</view>
+				<view class='item'>
+					<image wx:if="{{src}}" mode="widthFix" src="{{src}}" style="margin:0 auto;"></image>
+
+          <button class="btn"  wx:if="{{src}}" bindtap="rephotograph">重拍</button>
+				</view>
+			</view>
+		</view>
+
+		<view wx:if="{{src}}">
+   <view class="confirm-visitor">
+		
+		<button class="btn" style="margin-top:100rpx;" catchtap="confrim" wx:if="{{src}}">确认</button>
+</view>
+    </view>
+		<!-- 如果存在已经拍好的照片就不再显示调用摄像头的组件-->
+		<view wx:else>
+			<camera device-position="front" flash="off" binderror="error" style="margin:0 auto;width: 80%; height: 600rpx;"></camera>
+			<!-- 调用摄像头的组件-->
+		</view>
+	</view>
+
+
+</view>
+<!-- <image wx:if="{{src}}" mode="widthFix" src="{{src}}" style="margin:0 auto;"></image> -->
+<!-- 显示拍好的照片-->

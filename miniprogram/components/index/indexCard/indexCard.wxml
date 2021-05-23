@@ -1,0 +1,53 @@
+<!--components/OrderCard/orderCard.wxml-->
+
+<view class="top">
+  <view class="top-card">
+    <view style="display:flex">
+      <view style="width:70%">
+        <view class="top-card-user">
+          {{user.userName}}
+        </view>
+        <view class="top-card-info">
+          <view style="display: flex;justify-content: flex-start;align-items: center;font-size: 26rpx;">
+            <view style="margin-right:20rpx;">
+              等级{{user.userRank}}
+            </view>
+            <van-icon name="star" style="margin-left:15rpx;" size="32rpx" color="rgb(202,175,131)" />
+            <text style="margin-left:10rpx">{{user.integral}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="top-card-sign">
+        <view class="top-card-sign-left">
+          <image src="../../../images/icon/clockin.png" name="checked" style="margin:10rpx;height:50rpx;width:50rpx;"></image>
+        </view>
+        <view class="top-card-sign-right">
+          {{user.clockDays}}
+        </view>
+        <view style="width: 20%;"></view>
+      </view>
+    </view>
+
+
+
+
+    <view class="top-card-weeksign">
+      {{user.weekClock}} / 7
+      <view style="display:flex">
+        <view class="top-card-weeksign-progress">
+          <view class="top-card-weeksign-progress-item" style="z-index:99;width:{{(user.weekClock/7)*100*0.504}}%;background-color: rgb(23,144,255);"></view>
+          <view wx:if="{{user.weekClock!=7}}" class="top-card-weeksign-progress-item" style="z-index:1;width:{{((user.weekClock+1)/7)*100*0.504}}%;background-color: rgb(145,213,255);"></view>
+        </view>
+        <text style="margin-left:10rpx;">本周打卡天数</text>
+      </view>
+    </view>
+
+    <view class="top-card-study">
+      <view class="top-card-study-continue top-card-btn" hover-class="top-card-study-continue-hover" hover-stay-time="70">消费记录</view>
+      <view class="top-card-study-review top-card-btn" bindtap="toFeedBack" hover-class="top-card-study-review-hover" hover-stay-time="70">反馈</view>
+      <view style="width:40%;text-align:right">
+        <image class="top-card-study-icon" src="{{user.rankIcon}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

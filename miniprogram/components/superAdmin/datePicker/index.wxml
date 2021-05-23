@@ -1,0 +1,51 @@
+<view class="mh-date-picker">
+  <view class="mh-date-picker-mode">
+    <!-- <text class="{{ selectionMode == 'day' ? '' : 'mh-none' }}">日期选择</text> -->
+    <!-- <text class="{{ selectionMode == 'month' ? '' : 'mh-none' }}">月份选择</text>
+    <text class="{{ selectionMode == 'year' ? '' : 'mh-none' }}">年份选择</text> -->
+  </view>
+  <view class="mh-picker-panel__body">
+    <view class="mh-date-picker__header {{selectionMode =='year' ? 'mh-date-center' : '' }} ">
+      <view class="mh-picker-panel__icon-btn">
+        <image src="./images/perv.png" bindtap="changeYear" data-num="-10" data-value="-1" />
+        <view bindtap="selYear">{{isArrayYear ? year[0] + ' - ' + year[1] : year }}</view>
+        <image src="./images/next.png" bindtap="changeYear" data-num="10" data-value="1" />
+      </view>
+      <view class="mh-picker-panel__icon-btn {{ selectionMode !== 'year' ? '' : 'mh-none' }}">
+        <image src="./images/perv.png" bindtap="changeMonth" data-value="-1" />
+        <view bindtap="selMonth">{{ month }}月</view>
+        <image src="./images/next.png" bindtap="changeMonth" data-value="1" />
+      </view>
+    </view>
+    <view class="mh-date-picker-line">
+      <view class="mh-date-picker-week {{ selectionMode == 'day' ? '' : 'mh-none' }}">
+        <view class="item" wx:for="{{week}}" wx:key="item">{{item}}</view>
+      </view>
+    </view>
+    <view class="mh-picker-panel__content">
+      <view class="mh-date-table {{ selectionMode == 'day' ? '' : 'mh-none' }}">
+        <view class="mh-time-table__row">
+          <view class="day-cell {{item.able ? '' : 'disable-cell'}}" wx:for="{{dateArr}}" wx:key="index" bindtap="getDay" data-item="{{item}}">
+            <view class="span {{item.active ? 'isActive' : ''}} {{item.isToday ? 'isToday' :'' }}">
+              {{item.label}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="mh-time-table {{ selectionMode == 'month' ? '' : 'mh-none' }}">
+        <view class="mh-time-table__row">
+          <view class="time-cell" wx:for="{{monthList}}" wx:key="value" bindtap="selDay" data-month="{{item.value}}">
+            {{item.label}}
+          </view>
+        </view>
+      </view>
+      <view class="mh-time-table {{ selectionMode == 'year' ? '' : 'mh-none' }}">
+        <view class="mh-time-table__row">
+          <view class="time-cell" wx:for="{{yearList}}" wx:key="item" bindtap="selMonth" data-year="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

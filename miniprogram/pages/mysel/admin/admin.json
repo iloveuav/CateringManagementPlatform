@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "districtCard": "/components/admin/districtCard/districtCard",
+    "indexCard": "/components/index/indexCard/indexCard",
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  }
+  
+}

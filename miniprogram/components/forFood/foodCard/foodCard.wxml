@@ -1,0 +1,53 @@
+<!--components/playWhat/playWhat.wxml-->
+<view class="card-table-view">
+ <view class="card-col-head">
+      <!-- <icon class="iconfont icon-shouye"></icon> -->
+  <!-- <image class="myicon" src="{{scenery.imageUrl}}"></image> -->
+  <image class="myicon" src="{{hotalArray[0].src}}"></image>
+      <view class='sceneryName'> {{scenery.chapterName}}
+      <view class="time"><text class="money">￥{{scenery.lowestPrice}}9.9  </text>起</view>
+      <view class="time"><text >{{scenery.commentCount}}66条点评   {{scenery.satisfaction}}90%满意</text></view>
+      <view class="time"><text > {{city}} {{scenery.levelLabel}}</text></view>
+      </view>
+     </view>
+ <view class="line"></view>
+    <view class="card-col-content">
+    
+      <swiper class="swiper" interval='3000' duration='800' circular='true' previousMargin='10px' nextMargin='150px'  >
+       <swiper-item>
+        <view class="Card" >
+            <view class="Title" style=" "></view>
+            <image class="img"  src="../../../images/icon/addFrom.png"> </image>      
+           <view class="bottomText" style="margin-left:10rpx;">  
+           <view>点击新增进入模态框 </view>
+           <view>输入菜品信息进行添加</view>
+            <button class="add_btn {{checked&&item.classId== HotelId? 'checked' : ''}}" bindtap="addCityToPK" >新增🥗</button>
+           </view>
+            </view>
+            </swiper-item>
+        <block wx:for="{{hotalArray}}" wx:key="index" wx:for-index="index"  bindtap="getCityId" data-hotelId="{{item.hotelId}}" data-index='{{index}}' >
+          <swiper-item  data-i="{{index}}" data-hotelId="{{item.hotelId}}" bindtap='getHotelId'>
+
+    
+
+
+            <view class="Card">
+            <view class="Title" style=" "></view>
+            <image class="img"  src="{{item.src}}"> </image>      
+           <view class="bottomText" style="margin-left:10rpx;">  
+           <view>{{item.textimgTitle}}</view>
+           <view>￥9.9{{item.lowestPrice}}</view>
+            <button class="add_btn {{checked&&item.classId== HotelId? 'checked' : ''}}" bindtap="addCityToPK" >加入🛒</button>
+           </view>
+            </view>
+          </swiper-item>
+        </block>
+        <!-- <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/Images/start1/loading_blue.gif"></image>
+        </view> -->
+      </swiper>
+
+
+     </view>
+ <view class="line"></view>
+    </view>

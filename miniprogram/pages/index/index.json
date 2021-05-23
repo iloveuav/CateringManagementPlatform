@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+      "courseCard": "/components/index/indexCourseCard/courseCard",
+      "indexCard": "/components/index/indexCard/indexCard",
+      "dailySentence": "/components/index/dailySentence/dailySentence"
+    }
+}

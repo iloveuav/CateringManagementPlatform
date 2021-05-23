@@ -1,0 +1,81 @@
+/* components/classCard.wxss */
+@import "../../style/iconfont.wxss";
+
+
+.swiper {
+
+  /* min-width: 420rpx; */
+  margin-left: 1%;
+  right: 10rpx;
+  width: 100%;
+  height:100%;
+  bottom: 150rpx;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Card{
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+  box-shadow: 0 10rpx 10rpx #ccc;
+  height: 96%;
+  width: 280rpx;
+  border-radius: 30rpx;
+  margin-bottom: 150rpx;
+  margin-top: 10rpx;
+}
+
+.img{
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+  box-shadow: 0 10rpx 10rpx #ccc;
+  height: 400rpx;
+  width: 95%;
+  margin: 5rpx;
+  border-radius: 0rpx 0rpx 30rpx 30rpx;
+  /* margin-bottom: 30rpx; */
+}
+
+
+
+.Title{
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff !important;
+  background: #5bc0de !important;
+  border-color: #46b8da !important;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+  /* margin-bottom: 20rpx; */
+}
+
+.slide-content{
+  font-size: 30rpx;
+  word-wrap: break-word;
+  padding: 3rpx;
+  /* height: 100%; */
+}
+
+@keyframes closeDown {
+  form {
+    transform: translateY(0%);
+  }
+
+  to {
+    height: 0;
+    transform: translateY(110%);
+  }
+}
+
+
+
+.toClass {
+  margin-top: 40rpx;
+  background-color: white;
+  border-radius: 100rpx;
+}

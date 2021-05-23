@@ -1,0 +1,132 @@
+<!--components/visitorFrom/visitorFrom.wxml-->
+<view class='pagemodel'>
+<scroll-view scroll-y="true" style="height:100%;">
+	<!-- <image class='background' src='/Images/uavfire01.png'> </image> -->
+	<view class='head'>访客登记</view>
+	<!-- <button class="back" bindtap='jump'> 返回 </button> -->
+	<form bindsubmit="formSubmit">
+
+		<view class='section' wx:if="{{pageMess.step==1}}">
+			<view class='seciton-title'>商户/法定代表人信息</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">法定代表人姓名</view>
+				<input class='in' name='name'  placeholder="请输入姓名" bindinput="getName"  value="{{visitorName}}"></input>
+			</view>
+				<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">法定代表人身份证号</view>
+				<input class='in' name='name'  placeholder="请输入身份证" bindinput="getID"  value="{{visitorIdCard}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">邮箱地址</view>
+				<input class='in' name='id_num'  placeholder="请输入邮箱地址" bindinput="getEmail" value="{{visitorEmail}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">手机号码 </view>
+				<input class='in' name='phonenum' placeholder="请输入您的手机号" bindinput="getPhoneNum" value="{{visitorPhone}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">商户（餐饮公司）名 </view>
+				<input class='in' name='teamName' placeholder="请输入您的所在公司（团队）" bindinput="getTeamName" value="{{visitorTeamName}}"></input>
+			</view>
+
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">推荐人 </view>
+				<input class='in' name='teamName' placeholder="推荐人姓名" bindinput="getInterviewee" 
+				value="{{Interviewee}}"></input>
+			</view>
+
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">商户地址</view>
+				<input class='in' name='teamName' placeholder="商户详细地址" bindinput="getCause" value="{{Cause}}"></input>
+			</view>
+
+		</view>
+		<view class='section' wx:if="{{pageMess.step==1}}">
+			<view class='seciton-title'>业务信息</view>
+			<view class='item2'>
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">是否为连锁</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{isMultipleShopList}}" wx:for-item="item" wx:key="item.index" bindtap="fourtityboxChange" data-value="{{item.value}}" data-index="{{index}}" checked="{{item.selected}}" class="day-btn {{item.selected ? 'btn-selected' : ''}}">
+							{{item.title}}
+						</view>
+					</view>
+				</view>
+
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">合作方式</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{waysOfCooperationList}}" wx:for-item="item" wx:key="item.index" bindtap="healthyChange" data-value="{{item.value}}" data-index="{{index}}" checked="{{item.selected}}" class="day-btn {{item.selected ? 'btn-selected' : ''}}">
+							{{item.title}}
+						</view>
+					</view>
+				</view>
+
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">合作时间</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{CooperationYearList}}" wx:for-item="item" wx:key="item.index" bindtap="healthyChange" data-value="{{item.value}}" data-index="{{index}}" checked="{{item.selected}}" class="day-btn {{item.selected ? 'btn-selected' : ''}}">
+							{{item.title}}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+
+		<view class='section'  wx:if="{{pageMess.step==2}}">
+			<view class='seciton-title'>合作协议</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+						<view class="q-image-wrap" >
+							<!-- handleImagePreview -->
+							<image class="now-image" src="{{nowNdaUrl}}" mode='widthFix' data-idx="{{0}}" bindtap="looknowNDA"></image>	
+						</view>
+				</view>
+		  <image src="../../images/icon/editNotice.png" class="btn-setting" catchtap="signature"></image>
+			</view>
+		</view>
+
+
+
+		<view class='section'  wx:if="{{pageMess.step==3}}">
+			<view class='seciton-title'>客户附件资料</view>
+			<view class='item'>
+				<!-- 拍照按钮  -->
+				<image style="width:100rpx;height:100rpx;" src="../../../images/icon/takephoto.png" id="addimg1" bindtap="takePhoto" wx:if="{{images.length==0}}"></image>
+
+	<!-- 图片缩略图  -->
+				<view class="question-images" wx:if="{{visitorPhoto!='数据加载有误'}}">
+						<view class="q-image-wrap" >
+							<!-- handleImagePreview -->
+							<image class="now-image" src="{{visitorPhoto}}" mode='widthFix' data-idx="{{0}}" ></image>	
+						</view>
+				</view>
+				
+
+			</view>
+
+		</view>
+
+		
+
+
+		<modal hidden="{{hiddenmodalput}}" title="保密协议" cancel-text="取消" bindcancel="cancel" confirm-text="继续" bindconfirm="{{bindconfirm}}">
+			<view class='instructions'>{{instructions}}</view>
+			<radio class='radioScale' checked="{{checked}}" bindtap="checked">我已阅读并同意</radio>
+		</modal>
+
+<view class="confirm-visitor">
+		<button class="btn" catchtap="tostep2" wx:if="{{pageMess.step==1}}">下一步</button>
+		<!-- <button class="btn" catchtap="toStep3" wx:if="{{pageMess.step==2}}">下一步</button> -->
+		<!-- <button class="btn" catchtap="tostep2" wx:if="{{pageMess.step==3}}">提交</button> -->
+</view>
+
+	</form>
+
+</scroll-view>
+  </view>

@@ -1,0 +1,43 @@
+<!--components/OrderCard/orderCard.wxml-->
+
+<view class="top" >
+	<view class="top-card" style="border-radius: 20rpx;">
+		<view style="display:flex">
+			<view class="top-card-visitors">
+				<view class="title" style="margin-right:20rpx;">
+					Visitors
+				</view>
+
+				<view class="top-card-info">
+					<view class="mess-left">
+						<view class="number">
+							<view class="number">
+						{{todayVisitorNumber}}
+						</view>
+							<view class="number" wx:if="{{todayVisitorNumber>1000}}">
+						{{todayVisitorNumber/1000}}k
+						</view>
+						</view>
+						<text>Clients of Today</text>
+					</view>
+					<view class="mess-right">
+						<view class="number">
+						{{allVisitorNumber}}
+						</view>
+							<view class="number" wx:if="{{allVisitorNumber>1000}}">
+						{{allVisitorNumber/1000}}k
+						</view>
+						<text>Total Clients</text>
+					</view>
+				</view>
+
+			</view>
+		</view>
+	<view class="bottom">
+  {{nowtime}}
+  <!-- <view class="btn">
+  <image class="addFrom" src="../../../images/icon/addFrom.png"></image>
+  </view> -->
+		</view>
+	</view>
+</view>

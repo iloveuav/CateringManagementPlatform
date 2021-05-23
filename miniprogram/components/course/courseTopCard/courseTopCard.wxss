@@ -1,0 +1,123 @@
+/* components/course/courseTopCard/courseTopCard.wxss */
+
+
+
+.topCard{
+  height: 120rpx;
+  color: black !important;
+  background: white !important;
+  border-color: rgb(147, 196, 230) !important;
+  /* background: #5bc0de !important;
+  border-color: #46b8da !important; */
+}
+
+.select{
+  padding-top: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+/* -----之前的    ------------- */
+
+
+
+.tab {
+  height: 170rpx;
+  background-color: #4d9bf4;
+  border-radius: 0 0 20% 20%;
+  display: f;
+}
+
+.top-btns {
+  position: absolute;
+  width: 80%;
+  height: 170rpx;
+  margin: 25rpx 10%;
+  border-radius: 20rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10rpx #ccc;
+}
+
+.btn-item {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-btns image {
+  /* display: inline-block; */
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.hr {
+  width: 2rpx;
+  height: 100rpx;
+  background-color: #ddd;
+}
+
+.btn {
+  color: #555;
+  background-color: red;
+  width: 60%;
+  height: 100rpx;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.btn::after {
+  border: none;
+}
+
+.historycon {
+  height: 90%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  margin-top: 20rpx;
+  border-top: 0px;
+}
+
+.history {
+  /* height: 100vh; */
+  margin-bottom: 15px;
+  margin: 5px;
+  font-size: 14px;
+  line-height: 40px;
+  word-break: break-all;
+}
+
+.time {
+  text-align: center;
+  width: 200rpx;
+  font-size: 26rpx;
+}
+
+.top_txt {
+  width: 50%;
+  position: relative;
+  top: 30rpx;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #787878;
+  background-color: #f7f7f7;
+}
+
+.new_imgtent {
+  height: 300rpx;
+  width: 300rpx;
+}

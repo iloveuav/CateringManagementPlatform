@@ -1,0 +1,13 @@
+{
+
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "wordCard": "/components/wordCard/wordCard",
+    "topCard": "/components/course/courseTopCard/courseTopCard",
+    "foodCard":"/components/forFood/foodCard/foodCard"
+  }
+}

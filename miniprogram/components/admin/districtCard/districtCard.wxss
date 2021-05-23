@@ -1,0 +1,63 @@
+/* components/classCard.wxss */
+
+
+.swiper {
+
+  min-width: 420rpx;
+  margin-left: 35%;
+  right: 10rpx;
+  width: 480rpx;
+  height: 220rpx;
+  bottom: 150rpx;
+  background: transparent;
+  /* border: 1px solid black; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Card{
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 260rpx;
+  border-radius: 30rpx;
+  /* background: rgb(224, 177, 74); */
+}
+
+.Title{
+  text-align: center;
+  font-size: 35rpx;
+  /* color: white; */
+  margin-top: 65rpx;
+  padding: 40rpx 0 0 0;
+  margin-bottom: 20rpx;
+}
+
+.content{
+  margin-left: 25%;
+  font-size: 30rpx;
+}
+
+
+@keyframes closeDown {
+  form {
+    transform: translateY(0%);
+  }
+
+  to {
+    height: 0;
+    transform: translateY(110%);
+  }
+}
+
+
+
+.toClass {
+  margin-top: 40rpx;
+  background-color: white;
+  border-radius: 100rpx;
+}

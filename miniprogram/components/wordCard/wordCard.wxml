@@ -1,0 +1,44 @@
+<!--components/classCard.wxml-->
+
+
+
+
+  <swiper class="swiper" interval='3000' duration='1500' circular='true' previousMargin='10px' nextMargin='180px' bindchange="swiperBindchange" >
+        <block wx:for="{{allItem}}" wx:key="index" wx:for-index="index" >
+          <swiper-item catchtap="preimage" data-i="{{index}}"style="height:600rpx"> 
+            <!-- <image bindtap="preimage" src='{{item.frontImg}}' class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}">{{item.name}}</image> -->
+            <view class="Card"  >
+            <view class="Title" style=" "> {{item.textimgTitle}} </view>
+            <!-- <view class="img" catchtap="preimage" data-i="{{groupindex}}"   style="background-image: url({{item.src}});background-size:contain ;" ></view> -->
+            <image class="img"     src="{{item.src}}"> </image>
+             
+           <view class="slide-content {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}">  {{item.content}} </view>
+           
+            </view>
+           
+          </swiper-item>
+        </block>
+        <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/Images/start1/loading_blue.gif"></image>
+        </view>
+      </swiper>
+
+
+
+<!-- 课程 选项框 scroll-into-view="{{toCardView}}" -->
+<!-- <view wx:if='{{true}}' class='singleChoose'>
+  <scroll-view id="scroll2" scroll-x enable-flex scroll-with-animation scroll-left="{{scrollLeft}}" bindscroll="chooseCardScroll" bindtouchend="touchCardEnd">
+    <view wx:for="{{allItem}}" wx:key="item" style="background-image: url({{item.src}});background-size:contain;" class='chooseCard {{currentChooseCard2==index?"current":""}}'>
+    <view >
+
+    <view class="Title" catchtap="speach"   data-content="{{item.textimgTitle}}"> {{item.textimgTitle}} </view>
+      <image style="width:100%;height:90%;" wx-if="{{currentChooseCard2==index}}" src="{{item.src}}" >  </image>
+      <view wx-if="{{currentChooseCard2==index}}" data-content="{{item.content}} " style="color:white;  -webkit-text-stroke: 1px grey;"> {{item.content}} </view>
+    </view>
+      
+    </view>
+    <view class="cardBlock"></view>
+  </scroll-view>
+  <view class="scrollbarCover"></view>
+
+</view> -->

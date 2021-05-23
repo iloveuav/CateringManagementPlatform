@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mysel/me",
+    "pages/TakeOrderBot/TakeOrderBot",
+    "pages/notification/notification",
+    "pages/AddEngClassContent/AddEngClassContent",
+ 
+    "pages/mysel/admin/admin",
+    "pages/mysel/superAdmin/index",
+    "pages/mysel/superAdmin/editNda/index",
+    "pages/mysel/superAdmin/setting/setting",
+    "pages/mysel/superAdmin/admin/train/train",
+    "pages/mysel/superAdmin/AddFood/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "一个餐饮平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#3399FF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/button/home2.png",
+        "iconPath": "images/button/home1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/button/talk2.png",
+        "iconPath": "images/button/talk1.png",
+        "pagePath": "pages/notification/notification",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "images/button/me2.png",
+        "iconPath": "images/button/me1.png",
+        "pagePath": "pages/mysel/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
+    },
+    "QCloudTBP": {
+      "version": "1.0.4",
+      "provider": "wx65f00fe52f504192"
+    }
+  },
+ 
+  
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

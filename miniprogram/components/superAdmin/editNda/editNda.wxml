@@ -1,0 +1,43 @@
+<!--components/visitorFrom/visitorFrom.wxml-->
+<view class='pagemodel'>
+<scroll-view scroll-y="true" style="height:100%;">
+	<!-- <image class='background' src='/Images/uavfire01.png'> </image> -->
+	<view class='head'>访客登记</view>
+	<!-- <button class="back" bindtap='jump'> 返回 </button> -->
+	<form bindsubmit="formSubmit">
+
+		<view class='section' >
+			<view class='seciton-title'>保密协议</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+					<block wx:for="{{images}}" wx:key="*this">
+						<view class="q-image-wrap" wx:if="{{images.length!=0}}">
+							<!-- handleImagePreview -->
+							<image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap=""></image>
+							<view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+						</view>
+					</block>
+				</view>
+				<image style="width:100rpx;height:100rpx;" src="../../images/icon/upload.png" id="addimg1" bindtap="uploadimg" wx:if="{{images.length==0}}"></image>
+			</view>
+			<view class="question-images-tool">
+			</view>
+		</view>
+
+
+
+		<modal hidden="{{hiddenmodalput}}" title="保密协议" cancel-text="取消" bindcancel="cancel" confirm-text="继续" bindconfirm="{{bindconfirm}}">
+			<view class='instructions'>{{instructions}}</view>
+			<radio class='radioScale' checked="{{checked}}" bindtap="checked">我已阅读并同意</radio>
+		</modal>
+
+<view class="confirm-visitor">
+		<button class="btn" form-type="submit" wx:if="{{pageMess.step!=3}}">下一步</button>
+		<button class="btn" form-type="submit" wx:if="{{pageMess.step==3}}">提交</button>
+</view>
+
+	</form>
+
+</scroll-view>
+  </view>

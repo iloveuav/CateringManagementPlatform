@@ -1,0 +1,33 @@
+<!--components/course/courseSelect/courseSelect.wxml-->
+
+<view class='com-selectBox'>
+  <view class='com-sContent' catchtap='selectToggle'>
+    <view class="courseId">
+      {{CurrentChapter.courseId}}
+    </view>
+    <view class='com-sTxt'>{{CurrentChapter.chapterName}}</view>
+    <image src='../../../images/button/reset.png' class='com-sReset' catchtap="reset"></image>
+    <image src='../../../images/button/Newselect.png' class='com-sImg' animation="{{animationData}}"></image>
+  </view>
+  <view class='com-sList' wx:if="{{selectShow}}">
+    <view wx:for="{{courseObject.data}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>
+     <view class="courseId">
+      {{index+1}}
+    </view>
+    <view class='com-sTxt'>{{item._id.chapterName}}</view>
+
+    </view>
+  </view>
+</view>
+
+<!-- ————————————————
+（1）  animation="{{animationData}}" 这个是下箭头的动画效果
+
+（2）  data-index="{{index}}" 这个是当前元素被点击时的索引
+
+（3） selectToggle是模仿下拉选项框隐藏和显示的事件。
+
+（4） setText是模仿下拉选项框选择子项之后，设置内容的事件。
+
+（5） selectShow是表示option选项显示与否
+———————————————— -->

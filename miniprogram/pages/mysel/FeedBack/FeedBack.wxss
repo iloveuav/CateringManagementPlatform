@@ -1,0 +1,49 @@
+/* miniprogram/pages/FeedBack/FeedBack.wxss */
+page {
+  background: rgba(188, 188, 188, 0.17)
+}
+.view1{
+  padding-top: 20rpx;
+  background-color: white;
+  box-shadow:0rpx 1rpx 20rpx 0rpx #707070;
+
+}
+.view2{
+  height: 90rpx;
+}
+.textarea{
+  margin:auto;
+  width: 704rpx;
+  height: 330rpx;
+  background-color: rgba(158, 158, 158 , 0.28);
+  font-size: 30rpx;
+}
+.marginTop{
+  margin-top: 70rpx;
+}
+.marginLeft{
+    margin-left: 35rpx;
+}
+.floatLeft{
+  float: left;
+}
+.input{
+  position: relative;
+  left: 40rpx;
+  width: 510rpx;
+  border-bottom: 2rpx solid rgba(112, 112, 112, 0.15);
+}
+.fongStyle{
+  font-family: Agency FB;
+  font-size: 30rpx;
+  color: rgba(53, 38, 65, 1)
+}
+.button{
+  height: 100rpx;
+  width: 660rpx;
+  margin-top: 66rpx;
+  color: white;
+  font-size: 40rpx;
+  background: linear-gradient( 45deg,#5574F7 , #60C3FF); 
+
+}

@@ -1,0 +1,16 @@
+<!--components/train/topCard/topCard.wxml-->
+<view class="topCard" style="background-image: url('http://q9uen5wtx.bkt.clouddn.com/topCard.gif'); background-size: 100% 100%;">
+
+ <!-- -----------------课程卡片组件------------------------------------------ -->
+<view class="classCard">
+<scroll-view>
+<classCard   objectArray="{{trainType}}" intoBtnName="随机训练" pageName="train">
+  </classCard>
+</scroll-view>
+</view>
+<!-- ------------------------------------------------- -->
+
+</view>
+
+
+

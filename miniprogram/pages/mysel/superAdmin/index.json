@@ -1,0 +1,14 @@
+{
+
+  "usingComponents": {
+    "indexCard": "/components/superAdmin/index/indexCard/indexCard",
+    "vistorFrom": "/components/superAdmin/visitorFrom/visitorFrom",
+    "datePicker": "/components/superAdmin/datePicker/index",
+    "vistorEdit": "/components/superAdmin/visitorEdit/visitorEdit",
+    "districtCard": "/components/admin/districtCard/districtCard"
+
+  }
+
+
+}
+

@@ -1,0 +1,66 @@
+<!--miniprogram/pages/index/index.wxml-->
+
+<view class="weclowBox">
+  <text class="hello">> 苏州</text>
+</view>
+
+
+<!-- ---------用户欢迎及个人信息展示卡片-------------------------------------- -->
+<view class="tap">
+  <indexCard user="{{user}}">
+  </indexCard>
+</view>
+<!-- ------------------每日一句-------------------------------------------------- -->
+<dailySentence sentence="这里是公告">
+</dailySentence>
+<!-- ------------------------------------------------------------------------------- -->
+
+<!-- ---------------------------------------------------------------------------- -->
+<view class="course">
+  <view class="course-center-title">商户中心</view>
+</view>
+<!-- -----------------工业园区卡片组件------------------------------------------ -->
+<view class="classCard">
+
+  <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/images/loading.gif"></image>
+        </view>
+
+  <scroll-view>
+    <courseCard corseArray="{{allCourse[1].children}}" currentIndex="{{currentIndex}}" pageName="index" bindchangeCourse="getcurrentCourse">
+    </courseCard>
+  </scroll-view>
+  <view class="crouseType">工业园区</view>
+</view>
+<!-- ------------------------------------------------- -->
+<!-- -----------------日语课程卡片组件------------------------------------------ -->
+<view class="classCard">
+ <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/images/loading.gif"></image>
+        </view>
+  <scroll-view>
+    <courseCard corseArray="{{allCourse[0].children}}" currentIndex="{{currentIndex}}" pageName="index" bindchangeCourse="getcurrentCourse">
+    </courseCard>
+  </scroll-view>
+  <view class="crouseType">昆山</view>
+</view>
+<!-- ------------------------------------------------- -->
+<!-- -----------------其他课程卡片组件------------------------------------------ -->
+<view class="classCard">
+
+
+ <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/images/loading.gif"></image>
+        </view>
+
+  <scroll-view>
+    <courseCard corseArray="{{allCourse[2].children}}" currentIndex="{{currentIndex}}" pageName="index" bindchangeCourse="getcurrentCourse">
+    </courseCard>
+  </scroll-view>
+  <view class="crouseType">吴中区</view> 
+</view>
+<!-- ------------------------------------------------- -->
+<view>
+  <scroll-view>
+  </scroll-view>
+</view>

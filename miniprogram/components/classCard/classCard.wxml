@@ -1,0 +1,20 @@
+<!--components/classCard.wxml-->
+
+<!-- 课程 选项框 scroll-into-view="{{toCardView}}" -->
+<view wx:if='{{true}}' class='singleChoose'>
+  <scroll-view id="scroll2" scroll-x enable-flex scroll-with-animation scroll-left="{{scrollLeft}}" bindscroll="chooseCardScroll" bindtouchend="touchCardEnd">
+    <view wx:for="{{corseArray}}" wx:key="item" class='chooseCard {{currentChooseCard==index?"current":""}}'>
+      <view class="Title"> {{item.className}} </view>
+      <!-- <view wx-if="{{currentChooseCard==index}}"> 当前课号:{{item.classid}} </view> -->
+      <!-- <view> {{item.where}} </view> -->
+      <!-- <view wx-if="{{currentChooseCard==index}}"> {{item.classdetail}} </view> -->
+    </view>
+    <view class="cardBlock"></view>
+  </scroll-view>
+  <view class="scrollbarCover"></view>
+  <!-- <button bindtap='toClass' class="toClass">
+    {{intoBtnName}}
+  </button> -->
+
+
+</view>

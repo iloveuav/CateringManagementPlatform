@@ -1,0 +1,121 @@
+<!--components/visitorFrom/visitorFrom.wxml-->
+<view class='pagemodel'>
+<scroll-view scroll-y="true" style="height:100%;">
+	<!-- <image class='background' src='/Images/uavfire01.png'> </image> -->
+	<view class='head'>访客登记</view>
+	<!-- <button class="back" bindtap='jump'> 返回 </button> -->
+	<form bindsubmit="formSubmit">
+
+		<view class='section' wx:if="{{pageMess.step==1}}">
+			<view class='seciton-title'>个人/团队信息</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">姓名</view>
+				<input class='in' name='name'  placeholder="请输入姓名" bindtap="validation" value="{{visitorName}}"></input>
+			</view>
+				<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">身份证号</view>
+				<input class='in' name='name'  placeholder="请输入身份证" bindtap="validation" value="{{visitorName}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">邮件地址</view>
+				<input class='in' name='id_num'  placeholder="请输入邮箱地址" bindtap="validation" value="{{visitorId}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">手机号码 </view>
+				<input class='in' name='phonenum' placeholder="请输入您的手机号" value="{{visitorPhone}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">公司（团队）名 </view>
+				<input class='in' name='teamName' placeholder="请输入您的所在公司（团队）" value="{{ visitorTeamName}}"></input>
+			</view>
+
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">被访人 </view>
+				<input class='in' name='teamName' placeholder="被访人姓名" value="{{ visitorTeamName}}"></input>
+			</view>
+
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">事由</view>
+				<input class='in' name='teamName' placeholder="来访事由" value="{{ visitorTeamName}}"></input>
+			</view>
+
+		</view>
+		<view class='section' wx:if="{{pageMess.step==1}}">
+			<view class='seciton-title'>健康状况记录</view>
+			<view class='item2'>
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">14天内</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{fourteenDayList}}" wx:for-item="item" wx:key="item.index" bindtap="fourtityboxChange" data-value="{{item.value}}" data-index="{{index}}" checked="{{item.selected}}" class="day-btn {{item.selected ? 'btn-selected' : ''}}">
+							{{item.title}}
+						</view>
+					</view>
+				</view>
+
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">健康状况</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{healthList}}" wx:for-item="item" wx:key="item.index" bindtap="healthyChange" data-value="{{item.value}}" data-index="{{index}}" checked="{{item.selected}}" class="day-btn {{item.selected ? 'btn-selected' : ''}}">
+							{{item.title}}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+
+		<view class='section'  wx:if="{{pageMess.step==2}}">
+			<view class='seciton-title'>保密协议</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+					<block wx:for="{{images}}" wx:key="*this">
+						<view class="q-image-wrap" wx:if="{{images.length!=0}}">
+							<!-- handleImagePreview -->
+							<image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap=""></image>
+							<view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+						</view>
+					</block>
+				</view>
+				<image style="width:100rpx;height:100rpx;" src="../../images/icon/upload.png" id="addimg1" bindtap="uploadimg" wx:if="{{images.length==0}}"></image>
+			</view>
+			<view class="question-images-tool">
+			</view>
+		</view>
+
+
+
+		<view class='section'  wx:if="{{pageMess.step==3}}">
+			<view class='seciton-title'>访客附件资料</view>
+			<view class='item'>
+				<!-- 拍照按钮  -->
+				<image style="width:100rpx;height:100rpx;" src="../../images/icon/takephoto.png" id="addimg1" bindtap="takePhoto" wx:if="{{images.length==0}}"></image>
+
+ <!-- ------------------------拍照模块begain----------------------- -->
+
+
+ <!-- ------------------------拍照模块end----------------------- -->
+			</view>
+			<view class="question-images-tool">
+			</view>
+		</view>
+
+		
+
+
+		<modal hidden="{{hiddenmodalput}}" title="保密协议" cancel-text="取消" bindcancel="cancel" confirm-text="继续" bindconfirm="{{bindconfirm}}">
+			<view class='instructions'>{{instructions}}</view>
+			<radio class='radioScale' checked="{{checked}}" bindtap="checked">我已阅读并同意</radio>
+		</modal>
+
+<view class="confirm-visitor">
+		<button class="btn" form-type="submit" wx:if="{{pageMess.step!=3}}">下一步</button>
+		<button class="btn" form-type="submit" wx:if="{{pageMess.step==3}}">提交</button>
+</view>
+
+	</form>
+
+</scroll-view>
+  </view>

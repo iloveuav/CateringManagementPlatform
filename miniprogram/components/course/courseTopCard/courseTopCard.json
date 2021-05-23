@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Select": "/components/course/courseSelect/courseSelect"
+  }
+}

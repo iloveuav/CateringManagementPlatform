@@ -1,0 +1,84 @@
+/* pages/mysel/mysel.wxss */
+.bg {
+  height: 150px;
+  background-color: #fff;
+}
+
+.head {
+  padding: 20px;
+  display: row;
+  flex-direction: column;
+}
+
+.headIcon {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  color: #0f0f0f;
+  font-size: 15px;
+  margin-top: 15rpx;
+  justify-content: center;
+}
+
+.button {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.head image {
+  border-radius: 50%;
+}
+
+.hr {
+  width: 100%;
+  height: 15px;
+  background-color: #f4f5f6;
+}
+
+.item {
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 15px;
+}
+
+.detail2 {
+  font-size: 15px;
+  position: absolute;
+  right: 10px;
+  height: 50px;
+  line-height: 50px;
+  color: #888;
+}
+
+.line {
+  border: 1px solid #ccc;
+  opacity: 0.2;
+}
+.whiteline {
+  border: 0.5px solid #fff;
+  opacity: 0.7;
+}
+
+.btn_init{
+  border-radius: 15rpx;
+  background-color: cornflowerblue;
+  color:azure;
+  font-size:40rpx;
+  font-weight: 500;
+  width: 430rpx;
+  margin-bottom: 20rpx;
+}
+
+.btn_view{
+  margin-top:1rpx;
+}

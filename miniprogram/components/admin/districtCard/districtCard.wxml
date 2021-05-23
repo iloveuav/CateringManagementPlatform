@@ -1,0 +1,27 @@
+<!--components/classCard.wxml-->
+
+
+<!--components/classCard.wxml-->
+
+
+  <swiper class="swiper" interval='3000' duration='800' circular='true' previousMargin='10px' nextMargin='60px' bindchange="swiperBindchange" >
+        <block wx:for="{{objectArray}}" wx:key="index" wx:for-index="index"  >
+        <!-- style="background-image: url('http://forblog.uavserve.online/%E4%B8%8A%E4%BC%A0%E8%AF%BE%E7%A8%8B%E5%8D%A1%E7%89%87%E8%83%8C%E6%99%AF.jpg'); background-size: 100% 100%;" -->
+          <swiper-item >
+            <!-- <image bindtap="preimage" src='{{item.frontImg}}' class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}">{{item.name}}</image> -->
+            <view class="Card" style="background-image: url('http://forblog.uavserve.online/%E4%B8%8A%E4%BC%A0%E8%AF%BE%E7%A8%8B%E5%8D%A1%E7%89%87%E8%83%8C%E6%99%AF.jpg'); background-size: 100% 100%;">
+             <view class="Title" style="color:black;  -webkit-text-stroke: 1px grey;"> {{item.name}} </view>
+           <view class="content'}}"> 客户数：{{item.value}} </view>
+            </view>
+           
+
+          </swiper-item>
+        </block>
+        <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/Images/start1/loading_blue.gif"></image>
+        </view>
+      </swiper>
+
+  <button bindtap='toClass' class="toClass">
+    {{objectArray[currentChooseCard].className}}{{intoBtnName}}
+  </button>

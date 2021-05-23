@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "foodCard":"/components/forFood/foodCard/foodCard"
+  }
+}

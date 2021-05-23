@@ -1,0 +1,224 @@
+/* pages/test/test.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.tab {
+  height: 170rpx;
+  background-color: #4d9bf4;
+  border-radius: 0 0 20% 20%;
+}
+
+.top-btns {
+  position: absolute;
+  width: 80%;
+  height: 170rpx;
+  margin:  25rpx 10%;
+  border-radius: 20rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10rpx #ccc;
+}
+.btn-item{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-btns image{
+  /* display: inline-block; */
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 15%;
+  
+}
+.top-btns button{
+  display: flex;
+  color: #555;
+  width: 160rpx!important;
+  /* height: 100rpx; */
+  /* background-color: red; */
+  /* background: transparent; */
+  margin: 0;
+  padding: 0;
+}
+.hr{
+  width: 2rpx;
+  height: 100rpx;
+  background-color: #ddd;
+}
+.btn{
+  color: #555;
+  background-color: red;
+  width: 160rpx!important;
+  height: 100rpx;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+.btn::after{
+  border: none;
+}
+
+.historycon {
+  height: 90%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  margin-top: 20rpx;
+  border-top: 0px;
+}
+
+
+.history {
+  height: 100%;
+  margin-top: 15px;
+  margin: 10px;
+  font-size: 14px;
+  line-height: 40px;
+  word-break: break-all;
+}
+
+.time {
+  text-align: center;
+  width: 200rpx;
+  font-size: 26rpx;
+}
+
+.top_txt {
+  width: 50%;
+  position: relative;
+  top: 30rpx;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #787878;
+  background-color: #f7f7f7;
+}
+
+
+.new_imgtent {
+  height: 180rpx;
+  width: 190rpx;
+}
+
+/* 聊天内容 */
+
+.message {
+  margin-top: 30rpx;
+  text-align: center;
+  margin-bottom: 150rpx;
+}
+
+/* 聊天 */
+
+
+/* 对定位：position:relative;如果一个元素的设置该属性为relative，那么就激活了该元素left和top属性，利用这两个属性，该元素就相对于它自身原本在普通文档流中的位置进行偏移，但无论如何进行移动，元素仍然占据原来的空间，仍然属于普通流。 */
+.message-right {
+  max-width: 80%;
+  line-height: 40rpx;
+  float: right;
+  position: relative;
+  right: 40rpx;
+  text-align: left;
+}
+
+/* 浮动模型。浮动的元素脱离普通文档流，向左或者向右移动，直到它的边缘碰到包含框或者另一个浮动框的边缘。因为浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。 */
+.message-left {
+  max-width: 80%;
+  line-height: 40rpx;
+  float: left;
+  position: relative;
+  left: 5rpx;
+  text-align: left;
+}
+
+
+.new_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.message_txt {
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  border-radius: 7px;
+  background-color: #95d4ff;
+}
+
+
+.sendmessage {
+  background-color: white;
+  width: 100%;
+  padding: 5rpx;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.sendmessage input {
+  width: 90%;
+  margin: 10rpx auto;
+  height: 40px;
+  background-color: white;
+  line-height: 40px;
+  font-size: 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 40rpx;
+  padding-left: 20px;
+  padding-right: 110rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 8rpx #ccc;
+}
+
+.sendmessage button {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 60rpx;
+  height: 36px;
+  background: #fff;
+  color: #000;
+  line-height: 40px;
+  font-size: 14px;
+  background: transparent;
+}
+.sendmessage button::after{
+  border:none;
+}
+
+.hei {
+  margin-top: 0px;
+  height: 1rpx;
+}
+
+
+.unRead {
+  position: relative;
+}
+
+.unRead text {
+  position: absolute;
+  left: 160rpx;
+  top: -26rpx;
+  height: 32rpx;
+  min-width: 32rpx;
+  line-height: 32rpx;
+  padding: 3rpx 5rpx 4rpx;
+  font-size: 24rpx;
+  font-family: tahoma;
+  border-radius: 32rpx;
+  background: #f44;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 10;
+  box-sizing: content-box;
+}

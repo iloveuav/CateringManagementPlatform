@@ -1,0 +1,48 @@
+<view class='tab'>
+  <view class="top-btns">
+    <!-- <text class='fabu'>发布时间: {{tabdata.time_agree}}</text> -->
+    <view class="btn-item">
+      <image src="../../images/icon/icon_notice.png"></image>
+      <view class="unRead" wx:if="{{unReadNum}}">
+        <text>{{unReadNum}}</text>
+         </view>
+      <button bindtap='toSysMessList'>系统消息</button>
+    </view>
+    <span class="hr"></span>
+    <view class="btn-item">
+      <image src="../../images/icon/icon_notice.png"></image>
+      <button bindtap='toSysMessList'>消息列表</button>
+    </view>
+  </view>
+</view>
+<view class='message'>
+  <view class='top_txt'>小汇机器人为您服务</view>
+  <view class="historycon">
+    <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" class="history" wx:for="{{centendata}}" wx:key=''>
+      <!-- 时间 -->
+      <view>
+        <text class='time'>{{item.time}}</text>
+      </view>
+      <block wx:if="{{item.is_show_right ==1}}">
+        <!-- 右边 -->
+        <view class='message-right'>
+          <!-- 文字消息还是图片消息 -->
+          <text wx:if='{{!item.is_img}}' class='message_txt'>{{item.content}}</text>
+          <image wx:if='{{item.is_img}}' src='{{item.content}}' class='new_imgtent'></image>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='message-left'>
+          <text wx:if='{{!item.is_img}}' class='message_txt'>{{item.content}}</text>
+          <image wx:if='{{item.is_img}}' src='{{item.content}}' class='new_imgtent'></image>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<view class='hei' id="hei"></view>
+<view class="sendmessage">
+  <input type="emoji" bindinput="bindChange" confirm-type="done" value='{{news_input_val}}' placeholder="" />
+  <button class="btn" catchtap="add">发送</button>
+  <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
+</view>

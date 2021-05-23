@@ -1,0 +1,18 @@
+<!--miniprogram/pages/FunTalk/FunTalk.wxml-->
+<!-- <topCard class="topCard" >
+</topCard> -->
+
+<!-- ------------------每日一句-------------------------------------------------- -->
+<view class="sentence">
+<dailySentence sentence="点击下方雷达图中的属性进入专项训练">
+</dailySentence>
+</view>
+<!-- ------------------------------------------------------------------------------- -->
+<view class="randerContainer">
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ rader }}"></ec-canvas>
+</view>
+
+
+<view class="crossContainer">
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ cross }}"></ec-canvas>
+</view>

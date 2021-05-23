@@ -1,0 +1,129 @@
+  .top {
+  background-color: rgb(247, 247, 247);
+  border-bottom: 1rpx solid rgb(207, 207, 207);
+}
+
+.top-card {
+  margin: 30rpx;
+  background-color: rgb(35, 156, 195);
+  padding: 30rpx;
+  /* height: 450rpx; */
+  color: #fff;
+  border-radius: 20rpx;
+  border: 2rpx solid rgb(30, 152, 235);
+  /* display: flex; */
+}
+
+.top-card-user {
+  margin-bottom: 10rpx;
+  font-size: 38rpx;
+}
+
+.top-card-info {
+  font-size: 26rpx;
+}
+
+.top-card-sign {
+  /* text-align:right; */
+  width: 30%;
+  height: 45rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  color: #000;
+  font-size: 34rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-card-sign-left {
+  width: 30%;
+
+}
+
+.top-card-sign-right {
+  width: 50%;
+  text-align: center;
+}
+
+.top-card-weeksign {
+  margin-top: 60rpx;
+  font-size: 26rpx;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.top-card-weeksign-progress {
+  width: 60%;
+  margin-top: 10rpx;
+
+  display: flex;
+  border: 1rpx solid #eee;
+  border-radius: 100rpx;
+  height: 15rpx;
+  background-color: #fff;
+}
+
+.top-card-weeksign-progress-item {
+  border-radius: 100rpx;
+  position: absolute;
+  height: 15rpx;
+}
+
+
+.top-card-study {
+  margin-top: 50rpx;
+  /* width: 60%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-card-btn {
+  /* width: 200rpx; */
+  margin-left: 25rpx;
+  color: #000;
+  border-radius: 30rpx;
+  height: 60rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #eee;
+}
+
+.top-card-study-continue {
+  background-color: #fff;
+  color: rgb(35, 156, 195);
+  font-size: 30rpx;
+}
+
+.top-card-study-continue-hover {
+  background-color: #eee;
+}
+
+
+.top-card-study-review {
+  background-color: rgb(91, 176, 204);
+  color: #fff;
+}
+
+.top-card-study-review-hover {
+  background-color: rgb(74, 159, 187);
+}
+
+.top-card-study-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+
+
+
+
+
+

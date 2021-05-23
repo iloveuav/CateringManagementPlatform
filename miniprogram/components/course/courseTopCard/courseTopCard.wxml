@@ -1,0 +1,30 @@
+<!--components/course/courseTopCard/courseTopCard.wxml-->
+
+<view class="topCard" style="background-image: url('http://forblog.uavserve.online/courseTopCard.gif'); background-size: 100% 100%;">
+
+<view class="select">
+<Select  courseObject='{{courseObject}}' bindchangeChapter="getcurrentChapter"></Select>
+</view>
+
+</view>
+
+
+
+
+<!-- ---------------之前的---------------- -->
+<!-- <view class='tab' >
+  <view class="top-btns">
+    <!-- <text class='fabu'>发布时间: {{tabdata.time_agree}}</text> -->
+    <!-- <view class="btn-item">
+      <image src=""></image>
+      <button class="btn" bindtap='toSysMessList'>1111</button>
+    </view>
+
+    <span class="hr"></span>
+
+    <view class="btn-item">
+      <image src=""></image>
+      <button class="btn" bindtap='toSysMessList'>Vocabulary</button>
+    </view>
+  </view>
+</view> --> 

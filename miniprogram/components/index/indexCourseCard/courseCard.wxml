@@ -1,0 +1,99 @@
+<!--components/index/indexCourseCard/courseCard.wxml-->
+<view class="course">
+  <view class="course-center-title"></view>
+  <view>
+
+
+    <view class="classInfoBox">
+      <view class="course-icon">
+        <image src="../../../images/icon/courseIcon.png" class="icon"></image>
+      </view>
+      <view class="course-info">
+        <view class="course-info-title">
+          {{corseArray[currentSwiperIndex].name}}
+        </view>
+        <view style="font-size:32rpx">
+          {{corseArray[currentSwiperIndex].name?'目前在店人数76人':'即将加入新的商户'}}
+        </view>
+      </view>
+
+      <swiper class="swiper" interval='3000' duration='800' circular='true' previousMargin='0px' nextMargin='30px' bindchange="swiperBindchange" >
+        <block wx:for="{{corseArray}}" wx:key="index" wx:for-index="index" >
+          <swiper-item>
+            <image bindtap="preimage" src='{{item.frontImg}}' class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}"></image>
+          </swiper-item>
+        </block>
+        <view class="remind-box" wx:if="{{remind}}">
+          <image class="remind-img" src="/Images/start1/loading_blue.gif"></image>
+        </view>
+      </swiper>
+
+    </view>
+
+    <view class="course-progress" catchtap="toCourse">
+      <view class="course-id">{{corseArray[currentSwiperIndex].progress}}</view>{{corseArray[currentSwiperIndex].courseProgress}}
+    </view>
+
+
+
+
+
+  </view>
+</view>
+<!-- -----------  源代码---------------------- -->
+<!-- <swiper class="swiper" current="{{currentIndex}}" bindchange="course_eng">
+			<swiper-item id="course-{{item.courseId}}" class="course-item" wx:for="{{courses.corseArray}}">
+				<view style="display: flex;">
+					<view style="display:flex;margin-top:70rpx">
+						<view class="course-icon">
+							<van-icon name="column" size="65rpx" />
+						</view>
+						<view class="course-info">
+							<view class="course-info-title">
+								{{item.courseName}}
+							</view>
+							<view style="font-size:24rpx">
+								开始学习吧！
+							</view>
+						</view>
+					</view>
+					<view class="course-cover-container">
+						<image class="course-cover" src="{{item.courseSrc}}"></image>
+            <image wx:if="{{currentIndex == item.courseId && currentIndex != ncourses - 1}}" class="course-cover-next" src="{{item.courseSrc}}"></image>
+					</view>
+				</view>
+				<view class="course-progress">
+					<view class="course-id">{{item.courseId}}</view>{{item.courseProgress}}
+				</view>
+			</swiper-item>
+		</swiper>
+
+		<swiper class="swiper" current="{{currentIndex}}" bindchange="course_eng">
+			<swiper-item id="course-{{item.courseId}}" class="course-item" wx:for="{{courses.corseArray}}">
+				<view style="display: flex;">
+					<view style="display:flex;margin-top:70rpx">
+						<view class="course-icon">
+							<van-icon name="column" size="65rpx" />
+						</view>
+						<view class="course-info">
+							<view class="course-info-title">
+								{{item.courseName}}
+							</view>
+							<view style="font-size:24rpx">
+								开始学习吧！
+							</view>
+						</view>
+					</view>
+					<view class="course-cover-container">
+						<image class="course-cover" src="{{item.courseSrc}}"></image>
+            <image wx:if="{{currentIndex == item.courseId && currentIndex != ncourses - 1}}" class="course-cover-next" src="{{item.courseSrc}}"></image>
+					</view>
+				</view>
+				<view class="course-progress">
+					<view class="course-id">{{item.courseId}}</view>{{item.courseProgress}}
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>
+ -->

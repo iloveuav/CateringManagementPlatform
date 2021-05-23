@@ -1,0 +1,169 @@
+/* components/classCard.wxss */
+@import "../../style/iconfont.wxss";
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Title{
+  text-align: center;
+  font-size: 35rpx;
+  color: white;
+  margin-bottom: 20rpx;
+}
+
+.chatBubbles {
+  display: flex;
+}
+
+.chatBubbles .bubbleContainer {
+  display: inline-block;
+  max-width: 60%;
+  padding: 20rpx 30rpx;
+  margin: 20rpx 30rpx;
+  border: 1px solid #ebebed;
+  box-shadow: 0 0 20px #eaeaec;
+  overflow: hidden;
+}
+
+.chatBubbles.img .bubbleContainer {
+  padding: 0rpx;
+}
+
+.chatBubbles.img .bubbleContainer image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.chatBubbles.voice .bubbleContainer {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 40rpx;
+}
+
+.fromSelf {
+  flex-direction: row-reverse;
+}
+
+.fromOther {
+  flex-direction: row;
+}
+
+.fromSelf .bubbleContainer {
+  border-radius: 30rpx 30rpx 0 30rpx;
+}
+
+.fromOther .bubbleContainer {
+  border-radius: 30rpx 30rpx 30rpx 0;
+}
+
+.voicePlay {
+  margin: 0 10rpx 0 -10rpx;
+  font-size: 50rpx;
+}
+
+.voiceProgress {
+  display: flex;
+  align-items: center;
+  margin-right: 10rpx;
+}
+
+.voiceProgress .iconfont {
+  font-size: 40rpx;
+}
+
+#footer.closeDown {
+  /* transform: translateY(110%);
+  height: 0;
+  transition: transform 1s ease-out; */
+  overflow: hidden;
+  animation: closeDown 2s forwards;
+}
+
+@keyframes closeDown {
+  form {
+    transform: translateY(0%);
+  }
+
+  to {
+    height: 0;
+    transform: translateY(110%);
+  }
+}
+
+.singleChoose {
+  width: 200rpx;
+  padding: 30rpx;
+  border-radius: 60rpx 60rpx 0 0;
+  box-shadow: 0 -10rpx 20rpx #f0f1f2;
+  /* 分割线 *//* display: flex;
+  height: 340rpx;
+  min-width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-anchor: none;
+  overflow-x: auto; */
+}
+
+/* .singleChoose::-webkit-scrollbar {
+  display:none;
+  width:0;
+  height:0;
+  color:transparent;
+} */
+
+.singleChoose .chooseCard {
+  font-size: 12px;
+  width: 180rpx;
+  height: 200rpx;
+  margin: 30rpx 20rpx 20rpx;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  border: 1px solid #ebebed;
+  box-shadow: 0 0 20px #eaeaec;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to right,rgb(30, 146, 212),rgb(116, 156, 189));
+}
+
+
+.singleChoose .chooseCard:first-child {
+  margin-left: 35%;
+}
+
+.singleChoose .cardBlock {
+  width: 38%;
+  height: 100rpx;
+  /* background-color: transparent; */
+  flex-shrink: 0;
+ background: linear-gradient(to right,rgb(30, 146, 212),rgb(116, 156, 189));
+}
+
+.singleChoose .chooseCard.current {
+  font-size: 16px;
+  width: 260rpx;
+  height: 300rpx;
+  transition: all 0.5s ease-out;
+}
+
+.singleChoose scroll-view {
+  display: flex;
+  height: 380rpx;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-anchor: none;
+}
+
+.singleChoose .scrollbarCover {
+  height: 30rpx;
+  background: #fff;
+  transform: translateY(-20rpx);
+}
+
+.toClass {
+  background-color: white;
+  border-radius: 100rpx;
+}

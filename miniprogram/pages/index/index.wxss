@@ -1,0 +1,73 @@
+/* miniprogram/pages/index/index.wxss */
+
+.course {
+  /* padding: 30rpx; */
+}
+
+.remind-box{
+  position: relative;
+  z-index: 999;
+  top:85%;
+  left: 68%;
+  padding-top: 30rpx;
+
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.remind-img{
+  top:55%;
+  width: 160rpx;
+  height: 160rpx;
+  z-index: 999;
+}
+
+.crouseType
+{
+  /* margin: 10rpx; */
+  width: 98%;
+  /* border: 1rpx solid rgb(35, 156, 195); */
+  bottom: 30rpx;
+  /* border-radius: 30rpx 30rpx 0rpx 0rpx; */
+  border-radius: 0rpx 0rpx 50rpx 50rpx;
+  border-bottom: 2px solid rgba(223, 229, 231, 0.945);
+  /* box-shadow: blanchedalmond; */
+  
+  /* background: rgb(179, 221, 235); */
+  background: transparent;
+  color:rgb(21, 139, 179);
+  text-align: center;
+  padding: 10rpx;
+}
+
+.course-item {
+  display: inline-block;
+  /* padding-left: 20rpx; *//* margin-right: 30rpx; */
+  margin-left: 30rpx;
+  width: 100%;
+}
+
+.course-center-title {
+  font-size: 44rpx;
+  margin: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.welcomBox {
+  width: 100%;
+  height: 150rpx;
+}
+
+.hello {
+  font-size: 45rpx;
+  margin-left: 50rpx;
+}
+
+.tap {
+  height: 50%;
+}
+
+.classCard {
+  height: 100%;
+  margin-bottom: 20rpx;
+}

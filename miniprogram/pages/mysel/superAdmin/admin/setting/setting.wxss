@@ -1,0 +1,308 @@
+/* miniprogram/pages/admin/setting/setting.wxss */
+
+page {
+  background: #f8f8f8;
+  height: 100%;
+
+}
+
+
+page,.page {
+  height: 100%;
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+}
+.page-bottom{
+  height: 100%;
+  width: 750rpx;
+  position: fixed; 
+  background-color: rgb(246, 246, 250);
+  z-index: 0;
+}
+
+.pagemodel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.section {
+  margin: 20rpx auto;
+  padding: 20rpx;
+  border: 1rpx solid #ddd;
+  background: white;
+  position: relative;
+}
+
+.seciton-title {
+  position: relative;
+  margin: 10rpx 50rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.seciton-title::before {
+  content: '';
+  height: 30rpx;
+  width: 10rpx;
+  background-color: #0088fb;
+  box-shadow: 5px 0 0 #0abde3;
+  position: absolute;
+  top: 50%;
+  left: -40rpx;
+  transform: translateY(-50%);
+}
+
+.item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 3% 8% 0 10%;
+  /* overflow-wrap: ; */
+  /* border: 1px solid black; */
+}
+
+
+.key {
+  /* border: 1rpx solid red; */
+  display: inline-block;
+  width: 40%;
+  font-size: 25rpx;
+  color: #999;
+  text-align: center;
+}
+
+.in {
+  display: inline-block;
+  /* border: 1rpx solid blue; */
+  width: 350rpx;
+  height: 100%;
+  padding-left: 30rpx;
+  font-size: 20rpx;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  align-items: center;
+  letter-spacing: 3rpx;
+  /* border: 1px solid black; */
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.btn_view {
+  position: absolute;
+  right: 250rpx;
+  bottom: 50rpx;
+}
+
+#addimg1 {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 50rpx;
+  right: 460rpx;
+  bottom: 425rpx;
+}
+
+#addimg2 {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 50rpx;
+  right: 230rpx;
+  bottom: 425rpx;
+}
+
+#addimg3 {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  right: 15rpx;
+  bottom: 425rpx;
+}
+
+.btn_init {
+  border-radius: 20rpx;
+  width: 240rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 38px;
+  background-color: rgb(193, 200, 202);
+  /*按钮透明*/
+  /* border:none;				设置按钮边框 */
+}
+
+.confirm-visitor {
+  position: relative;
+  /* transform: translateX(-50%); */
+  width: 100%;
+  height: 180rpx;
+  /* border:1rpx solid black; */
+}
+
+.confirm-visitor button {
+  background: #0088fb;
+  color: #fff;
+  border-radius: 5rpx;
+  top: 25%;
+  font-size: 30rpx;
+  width: 400rpx;
+}
+
+.select {
+  width: 50rpx;
+  font-size: 30rpx;
+  align-items: center;
+}
+
+.question-images-area {
+  padding: 30rpx 0;
+}
+
+.question-images-tool {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.question-images {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+}
+
+.q-image-wrap {
+  display: flex;
+  /* background-color: black; */
+  /* margin-right: 22rpx; */
+  align-items: center;
+  justify-content: center;
+}
+
+.q-image {
+  flex: 1;
+  height: 200rpx;
+  width: 100%;
+}
+
+.now-image {
+  flex: 1;
+  height: 150rpx;
+  width: 150rpx;
+  position: absolute;
+  right: 200rpx;
+  bottom: 40rpx;
+  border: 1px solid gray;
+}
+.black-image {
+  flex: 1;
+  height: 150rpx;
+  width: 150rpx;
+  position: absolute;
+  right: 200rpx;
+  bottom: 40rpx;
+  border: 1px solid gray;
+  background-color: rgb(226, 220, 220);
+  border-radius: 10%;
+}
+
+.q-image-remover {
+  text-align: center;
+  color: gainsboro;
+}
+
+
+
+
+/* -------保密协议样式--------------- */
+
+/* 设置多余内容修剪隐藏 */
+.instructions {
+  height: 300rpx;
+  font-size: 32rpx;
+  color: pink;
+  /* 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容 */
+  overflow: auto;
+}
+
+/* 单选钮样式 */
+.radioScale {
+  font-size: 25rpx;
+  transform: scale(0.7);
+}
+
+/* -------保密协议样式end--------------- */
+
+/* ---------------健康状况-14天-------------------------- */
+
+.firstCheckbox {
+  margin-left: 10rpx;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  height: 50%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.day-btn {
+  /* flex: 1; */
+  /* width: 100%;
+      height: 120rpx; */
+  font-size: 18rpx;
+  border-radius: 4px;
+  text-align: center;
+  margin: 3rpx;
+  padding: 10rpx;
+  border: 1px solid #85e1cd;
+}
+
+.btn-selected {
+  border: 1px solid #06a380;
+  background-color: #85e1cd;
+}
+
+/* 公告文本框 */
+
+
+.noticeTextArea{
+  height: 300rpx;
+
+  /* flex: 4; */
+  width: 90%;
+  margin: 10rpx auto;
+  background-color: white;
+  line-height: 40px;
+  font-size: 18px;
+  border: 1px solid #d0d0d0;
+  border-radius: 40rpx;
+  padding-left: 10px;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 8rpx #ccc;
+  padding: 50rpx;
+}
+.emailTextArea{
+  height: 55rpx;
+  /* flex: 4; */
+  width: 80%;
+  margin: 10rpx auto;
+  background-color: white;
+  line-height: 40px;
+  font-size: 25px;
+  border: 1px solid #d0d0d0;
+  border-radius: 40rpx;
+  padding: 10rpx;
+  padding-left: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 8rpx #ccc;
+}
+
+.btn-setting{
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+}

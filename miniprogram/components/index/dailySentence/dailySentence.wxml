@@ -1,0 +1,10 @@
+<!--components/index/dailySentence.wxml-->
+	<view class="top-encourage">
+		<view class="top-encourage-icon">
+			<!-- <van-icon name="comment" color="white" /> -->
+      <image src="../../../images/icon/dailyIcon.png" style="width:50rpx;height:50rpx;"></image>
+		</view>
+		<view class="top-encourage-text">
+			<text style="margin-left:10rpx;font-size:25rpx;">{{sentence}}</text>
+		</view>
+	</view>

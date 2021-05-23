@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "classCard": "/components/admin/districtCard/districtCard"
+  }
+}

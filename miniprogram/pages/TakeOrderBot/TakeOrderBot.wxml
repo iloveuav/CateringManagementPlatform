@@ -1,0 +1,98 @@
+<!--miniprogram/pages/TalkBot/TalkBot.wxml-->
+<view class="topCard">
+<topCard courseObject="{{corseObject}}" bindchangeChapter="getcurrentChapter">
+</topCard>
+</view>
+
+<!-- ---------------------tabArea------------------------ -->
+
+<view class='message'>
+  <view class='top_txt'>{{className}}欢迎您</view>
+  <view class="historycon">
+    <!-- 选择课程难度 下拉框 -->
+    <view id="root">
+      <!-- 聊天窗体 -->
+      <!-- <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" class="history" wx:for="{{centendata}}" wx:key='index' wx:for-index="groupindex" catchtap="preimage" bindlongtap='check' data-i="{{groupindex}}"> -->
+
+<!-- style='height: {{scrollTop}};' -->
+      <scroll-view scroll-y="true" scroll-top="{{scrollTop+100}}" scroll-with-animation enable-back-to-top
+       scroll-into-view="{{toLast}}"
+       style='height: {{scrollTop+100}};'>
+        <!-- <image src="http://qayfx8qb0.bkt.clouddn.com/tmp/wx796ecbe5abb047e5.o6zAJsxEl7OaCkRJJGGx0jXlFzMc.x2v11PBX86jz4eebfa8606faf0d32e5dbd64556a2090.gif"></image> -->
+
+        <!-- ----------------历史end---------- -->
+        <block id="item{{index}}" wx:for="{{centendata}}" wx:key="index" wx:for-index="groupindex" >
+          <view id="msg-{{index}}" wx:if="{{item!=null}}" class="chatBubbles {{item.contentType}} {{item.isBot?'fromOther':'fromSelf'}}" wx:key="{{}}">
+          
+            <view class="bubbleContainer">
+              <!-- 语音部分 contentType为voice才显示 -->
+              <block wx:if='{{item.contentType=="voice"}}'>
+                <!-- 语音消息的播放暂停按钮 -->
+                <!-- <icon class="voicePlay iconfont {{isVoicePlay?'icon-PlayFilled':'icon-zanting'}}" bindtap="toggleVoicePlay"></icon> -->
+                <!-- 语音消息 音频图标 -->
+                <!-- <view class="voiceProgress" bindtap="toScrollBottom">
+                  <icon class="iconfont icon-icon7"></icon>
+                  <icon class="iconfont icon-voice"></icon>
+                  <icon class="iconfont icon-voiceprint-line"></icon>
+                  <icon class="iconfont icon-icon7"></icon>
+                </view> -->
+              </block>
+              <!-- 文字消息 content有值才显示 如果为语音消息content应为语音消息长度-->
+
+              <!-- 图片消息 contentType为img时显示 src为数据对象中的src -->
+              <text style="font-size:38rpx;font-weight:600;" v-if='{{item.textimgTitle!=""}}' data-content="{{item.textimgTitle}}" catchtap="speach">{{item.textimgTitle}}\n</text>
+              <image wx:if='{{item.contentType=="img"}}' src="{{item.src}}"  mode="aspectFill" data-i="{{groupindex}}" catchtap="preimage" lazy-load></image>
+
+              <text v-if='{{item.content!=""&&item.content!=undefined}}' data-content="{{item.content}}" catchtap="speach">{{item.content}}</text>
+            </view>
+          </view>
+
+          <!-- ----互动类型---- -->
+          <view class="InteractBox" wx:if="{{item.contentType=='Interact'}}">
+            <!-- <image src="/images/button/cancel.png" style='position:absoluted;' class="cancel" bindtap=''></image> -->
+            <view wx:for="{{centendata[groupindex].detail.interactData}}" wx:key="{{item.index}}">
+              <button catchtap="dealInteract" class="setWaitBtn  {{centendata[groupindex].detail.choosed==index?'':''}}" confirm-type="done" hidden="{{centendata[groupindex].detail.choosed!=index&&centendata[groupindex].detail.choosed!=undefined}}" value="{{item}}" data-detail='{{centendata[groupindex].detail}}' data-id='{{index}}' data-growid='{{groupindex}}' disabled="{{centendata[groupindex].detail.choosed!=undefined}}">
+                {{item}}</button>
+            </view>
+          </view>
+          <!-- ----互动类型end---- -->
+
+
+          <!-- -----------------单词横向轮播卡片组件------------------------------------------ -->
+          <view class="wordCard" wx-if="{{item.textImgArray.length>0}}">
+            <scroll-view style="height:100%">
+              <!-- <wordCard allItem="{{item.textImgArray}}" bindspeach="speach">
+              </wordCard> -->
+
+               <foodCard scenery="{{item}}" hotalArray="{{item.textImgArray}}" city="{{city}}" bindgetHotalId="getPKcityId"></foodCard>
+            </scroll-view>
+          </view>
+          <!-- ------------------------------------------------- -->
+
+       
+        </block>
+        <!-- <view class='hei' id="hei"></view> -->
+        <!-- <button wx:if="{{classLength==0&&start==true}}" class="nextClassBtn" catchtap="toNextClass">进入下一分类？</button>
+        <button wx:if="{{start==false&&classLength==0}}" class="nextClassBtn" catchtap="startTeach">提交并支付</button> -->
+      </scroll-view>
+
+    </view>
+    <!-- root节点 -->
+
+  </view>
+  <!-- 旧的聊天窗体 -->
+  <!-- 旧的sview end -->
+  <!-- mess end -->
+</view>
+
+<button class="continueBtn" wx-if="{{continueBtn&&classLength!=0}}" catchtap="showTeach">continue</button>
+<switch class="autoRA" checked="{{autoReadingAloud}}" bindchange="changeautoRA"></switch>
+<image src='../../images/talkBot/talk.png' class='autoraImg'></image>
+
+<image src='../../images/button/goup.png' class='goTop' hidden='{{!backTopValue}}' bindtap="backTop"></image>
+
+
+ <view class='hei' id="hei"></view>
+   <view class='hei' id="hei"></view>
+
+<!-- <view id="footer" class='{{isShowChooseModal?"":"closeDown"}}'></view> -->

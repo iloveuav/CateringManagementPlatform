@@ -1,0 +1,36 @@
+<!--miniprogram/pages/admin/editNda/index.wxml-->
+<view class='section' >
+			<view class='seciton-title'>NDA图片上传</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+					<block wx:for="{{images}}" wx:key="*this">
+						<view class="q-image-wrap" wx:if="{{images.length!=0}}">
+							<!-- handleImagePreview -->
+							<image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+							<view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+							<view class="q-image-update"  bindtap="updateNDA">更新</view>
+						</view>
+					</block>
+				</view>
+				<image style="width:100rpx;height:100rpx;" src="../../../images/icon/upload.png" id="addimg1" bindtap="uploadimg" wx:if="{{images.length==0}}"></image>
+			</view>
+		</view>
+
+
+
+
+
+    <view class='section' wx:if="{{nowNdaUrl}}">
+			<view class='seciton-title'>当前NDA预览</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+		
+						<view class="q-image-wrap" >
+							<!-- handleImagePreview -->
+							<image class="now-image" src="{{nowNdaUrl}}" mode="aspectFill" data-idx="{{0}}" bindtap="looknowNDA"></image>	
+						</view>
+				</view>
+			</view>
+		</view>

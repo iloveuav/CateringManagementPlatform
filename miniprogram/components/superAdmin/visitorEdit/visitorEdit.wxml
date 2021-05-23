@@ -1,0 +1,108 @@
+<!--components/visitorFrom/visitorFrom.wxml-->
+<view class='pagemodel'>
+<scroll-view scroll-y="true" style="height:100%;">
+
+
+	<!-- <image class='background' src='/Images/uavfire01.png'> </image> -->
+	<view class='head'>访客登记</view>
+	<!-- <button class="back" bindtap='jump'> 返回 </button> -->
+	<form bindsubmit="formSubmit">
+
+		<view class='section'>
+			<view class='seciton-title'>认证个人/团队信息</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">真实姓名</view>
+				<input class='in' name='name' disabled="{{editFlag}}" placeholder="请输入真实姓名" bindtap="validation" value="{{list_index.visitorName}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true">身份证号</view>
+				<input class='in' name='id_num' disabled="{{editFlag}}" placeholder="请输入公民身份证号" bindtap="validation" value="{{list_index.visitorId_num}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true" >手机号码 </view>
+				<input class='in' name='phonenum' disabled="{{editFlag}}" placeholder="请输入您的手机号" value="{{list_index.visitorPhonenum}}"></input>
+			</view>
+			<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true" >公司（团队）名 </view>
+				<input class='in' name='teamName' disabled="{{editFlag}}" placeholder="请输入您的所在公司（团队）"value="{{list_index.visitorTeamName}}"></input>
+			</view>
+
+				<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true" >邮箱 </view>
+				<input class='in' name='teamName' disabled="{{editFlag}}" placeholder="请输入您的所在公司（团队）"value="{{list_index.VisitorInfo.email}}"></input>
+			</view>
+
+				<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true" >来访事由 </view>
+				<input class='in' name='teamName' disabled="{{editFlag}}" placeholder="请输入您的所在公司（团队）"value="{{list_index.VisitorInfo.cause}}"></input>
+			</view>
+
+				<view class='item'>
+				<view class='key' type='text' maxlength='12' auto-focus="true" >被访人 </view>
+				<input class='in' name='teamName' disabled="{{editFlag}}" placeholder="请输入您的所在公司（团队）"value="{{list_index.VisitorInfo.Interviewee}}"></input>
+			</view>
+		</view>
+
+		
+		<view class='section'>
+			<view class='seciton-title'>健康状况记录</view>
+			<view class='item2'>
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">14天内</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{list_index.VisitorInfo.fourteenValues}}" wx:for-item="item" wx:key="item.index" bindtap="fourtityboxChange" data-value="{{item.value}}" data-index="{{index}}" checked="true" class="day-btn btn-selected">
+							{{item}}
+						</view>
+					</view>
+				</view>
+
+
+				<view class="item3">
+					<view class='key' type='text' maxlength='12' auto-focus="true">健康状况</view>
+					<view class="firstCheckbox">
+						<view wx:for="{{list_index.VisitorInfo.healthValues}}" wx:for-item="item" wx:key="item.index" bindtap="healthyChange" data-value="{{item.value}}" data-index="{{index}}" checked="true" class="day-btn btn-selected">
+							{{item}}
+						</view>
+					</view>
+				</view>
+
+			</view>
+		</view>
+
+
+
+		<view class='section'>
+			<view class='seciton-title'>访客附件资料</view>
+			<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+						<view class="q-image-wrap" wx:if="{{list_index.visitorPhoto}}">
+							<!-- handleImagePreview -->
+							<image class="q-image" src="{{list_index.visitorPhoto}}" mode="aspectFill" data-idx="{{index}}"bindtap="handleImagePreview"></image>
+						</view>
+						<view wx:else style="font-size:35rpx;">无</view>
+				</view>
+			</view>
+
+				<view class='item'>
+				<!-- 图片缩略图  -->
+				<view class="question-images">
+						<view class="q-image-wrap" wx:if="{{list_index.ndaSignPath}}">
+							<!-- handleImagePreview -->
+							<image class="q-image" src="{{list_index.ndaSignPath}}" mode="aspectFill" data-idx="{{index}}"bindtap="lookNda"></image>
+						</view>
+						<view wx:else style="font-size:35rpx;">无</view>
+				</view>
+			</view>
+
+		</view>
+<view class="backBox" bindtap="flagset" data-pageFlag="1">
+<view class="back">返回</view>
+  </view>
+
+
+		
+	</form>
+</scroll-view>
+  </view>

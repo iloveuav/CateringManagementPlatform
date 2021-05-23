@@ -1,0 +1,66 @@
+<!--miniprogram/pages/index/visitorFrom/visitorFrom.wxml-->
+
+<view class="container">
+	<view class="container">
+		<swiper current="{{current}}">
+			<swiper-item class="typeContent" wx:for="{{fromList}}" wx:for-item="FromPage" wx:for-index="FromPage.step" wx:key="{{FromPage.step}}">
+				<!-- 第{{FromPage.step}}页 访客表单信息填写 -->
+				<view class="title" wx:if="{{FromPage.step==1}}">
+					<vistorFrom bind:callHelp="helpUploadPic" bind:toHome="touchHome" pageMess="{{FromPage}}" nowNdaUrl="{{nowNdaUrl}}" bind:getStep1="getStep1">
+					</vistorFrom>
+				</view>
+
+				<!-- 第{{FromPage.step}}页 NDA及手签 -->
+				<view class="title" wx:if="{{FromPage.step==2}}">
+
+					<view wx:if="{{!signature.ndaSignPath}}">
+						<vistorFrom bind:callHelp="helpUploadPic" bind:toHome="touchHome" pageMess="{{FromPage}}" nowNdaUrl="{{nowNdaUrl}}">
+						</vistorFrom>
+					</view>
+
+					<view wx:if="{{signature.ndaSignPath}}">
+						<!-- 签字后 -->
+						<vistorFrom bind:callHelp="helpUploadPic" bind:toHome="touchHome" pageMess="{{FromPage}}" nowNdaUrl="{{signature.ndaSignPath}}">
+						</vistorFrom>
+					</view>
+				</view>
+
+
+				<!-- 第{{FromPage.step}}页 最后一页自动拍照 -->
+				
+				<view class="title" wx:if="{{FromPage.step==3}}">
+				<!-- 拍照前 -->
+				<view wx:if="{{!visitorPhoto.visitorPhoto}}">
+				<vistorFrom bind:callHelp="helpUploadPic" bind:toHome="touchHome" pageMess="{{FromPage}}"	>
+					</vistorFrom>
+					</view>
+				
+					<!-- 拍照后 -->
+					<view wx:if="{{visitorPhoto.visitorPhoto}}">
+						<vistorFrom bind:callHelp="helpUploadPic" bind:toHome="touchHome" pageMess="{{FromPage}}"
+					visitorPhoto="{{visitorPhoto.visitorPhoto}}">
+					</vistorFrom>
+					</view>
+
+				</view>
+
+				<!-- <image class="signImage" src="{{signature.ndaSignPath}}" wx:if="{{signature.ndaSignPath}}"></image> -->
+				<view class="nextBtnArea">
+					<button  catchtap="toStep3" wx:if="{{FromPage.step==2}}">下一步</button>
+				</view>
+			
+				<button class="Submitbtn" catchtap="submit" wx:if="{{FromPage.step==3}}">提交</button>
+			</swiper-item>
+
+
+		</swiper>
+
+
+
+
+
+
+	</view>
+
+
+</view>

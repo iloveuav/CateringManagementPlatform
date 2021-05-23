@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "vistorFrom": "/components/superAdmin/visitorFrom/visitorFrom"
+  }
+}

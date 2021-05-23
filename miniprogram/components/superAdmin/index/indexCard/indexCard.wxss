@@ -1,0 +1,105 @@
+  .top {
+  background-color: rgb(255, 255, 255);
+  
+  border-bottom: 1rpx solid rgb(207, 207, 207);
+  border-radius: 20rpx;
+  /* border: 1px solid grey; */
+  box-shadow: grey;
+}
+
+.top-card {
+  margin: 0rpx;
+  /* background-color: rgb(35, 156, 195); */
+  background-color:  rgb(255, 255, 255);
+  height: 100%;
+  /* color: #fff; */
+ 
+  /* display: flex; */
+}
+
+.top-card-visitors {
+  margin-bottom: 10rpx;
+  padding: 30rpx;
+  font-size: 38rpx;
+  width: 100%;
+}
+
+.top-card-visitors .title{
+  font-size: 26rpx;
+  color: grey;
+  font-weight: bold;
+}
+.top-card-info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin-top: 20rpx;
+  /* flex-wrap: wrap; */
+}
+
+.mess-left{
+  display: flex;
+  flex: 1;
+ 
+}
+.mess-left .number{
+  font-size: 42rpx;
+  font-weight:bolder;
+  /* border: 1px solid black; */
+}
+.mess-left text{
+  flex: 1;
+  font-size: 24rpx;
+  color: gray;
+  margin-left: 25rpx;
+}
+
+.mess-right{
+  flex: 1;
+  display: flex;
+}
+
+.mess-right .number{
+  font-size: 40rpx;
+  font-weight:bolder;
+  /* border: 1px solid black; */
+}
+.mess-right text{
+  flex: 1;
+  font-size: 24rpx;
+  color: gray;
+  margin-left: 25rpx;
+}
+
+.top .bottom{
+bottom: 0rpx;
+height: 30rpx;
+background-color: #EFFAFE;
+border-radius: 0 0 20rpx 20rpx;
+text-align: center;
+font-size: 18rpx;
+}
+
+.top .bottom .btn{
+ position: relative;
+}
+
+.addFrom{
+  position: absolute;
+  right: 30rpx;
+  bottom: 5rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+
+
+
+
+
+
+
+
