@@ -26,6 +26,14 @@ Page({
     interactData: [],
     textImgArray: [],
 
+  
+    newFoodArray: [],
+    //新增菜品
+    foodName:'',
+    foodPrice:null,
+    foodIntroduce:'',
+
+
     tempimg: [], //临时数组  等点击发送的时候一起走
 
     //拖拽相关
@@ -51,7 +59,7 @@ Page({
       //其他课程
       ClassCollection = 'Hanalyse-kunShan'
     }
-
+    ClassCollection = 'Hanalyse-IndustrialPark'
     console.log(ClassCollection);
   },
 
@@ -107,18 +115,20 @@ Page({
   // 把当前图文Data放到数组中  等待触发submit一起上传
   addOneItem: function (e) {
     var newData = {
-      textimgTitle: this.data.textimgTitle,
+      foodName: this.data.foodName,
+      foodPrice: this.data.foodPrice,
       chapterName: this.data.chapterName,
-      content: this.data.message,
-      src: this.data.imgUrl,
+      foodIntroduce: this.data.foodIntroduce,
+      picSrc: this.data.imgUrl,
     }
-    let textImgArray = this.data.textImgArray;
-    textImgArray.push(newData);
+    let newFoodArray = this.data.newFoodArray;
+    newFoodArray.push(newData);
 
     this.setData({
-      textImgArray: textImgArray,
-      textimgTitle: '',
-      message: '',
+      newFoodArray: newFoodArray,
+      foodName: '',
+      foodPrice: '',
+      foodIntroduce:'',
       imgUrl: '',
       imageObject: '',
       answer: '',
@@ -250,7 +260,6 @@ Page({
         }
         var newData = {
           contentType: newcontentType,
-
           isBot: true,
 
           classCollection: ClassCollection,
@@ -263,6 +272,9 @@ Page({
           detail: {},
           textimgTitle: that.data.textimgTitle,
           textImgArray: that.data.textImgArray,
+
+          newFoodArray:this.data.newFoodArray,
+
           content: that.data.message,
           src: that.data.imgUrl,
           imgfile: that.data.tempimg,
@@ -302,9 +314,11 @@ Page({
               message: '',
               addFoodCardView: false,
               textimgTitle: '',
+
               imgfile: '',
               btnDie: false,
               textImgArray: [],
+              newFoodArray: [],
               answer: '',
               setFrontImg: '',
 
@@ -370,19 +384,19 @@ Page({
               })
               return;
             } else {
-              this.add();
+              // this.add();
             }
 
           }
           //单个图片
-          else if (this.data.textimgTitle == '' || this.data.textimgTitle == undefined) {
+          else if (this.data.textimgTitle == '' || this.data.textimgTitle == undefined||this.foodName===''||this.foodName===undefined) {
             console.log("上传单个图片或封面");
-            this.add();
+            // this.add();
           }
-          //图文 
-          else {
-            this.addOneItem();
-          }
+          // //图文 或 新菜单项
+          // else {
+          //   this.addOneItem();
+          // }
           return;
         }
       },
@@ -435,12 +449,12 @@ Page({
                 imgUrl: 'http://' + imgobj.imageURL
               })
             }
-
-            if (that.data.textimgTitle == '') {
-              that.add();
-            } else {
-              that.addOneItem();
-            }
+//不再自动处理
+            // if (that.data.textimgTitle == '') {
+            //   that.add();
+            // } else {
+            //   that.addOneItem();
+            // }
 
             // //对象存储中外链默认域名 http://p2mksxx.bkt.clouddn.com/
           },
@@ -690,7 +704,31 @@ Page({
       });
     }
   },
+  getFoodName(e) {
+    if (e.detail.value) {
+      let value = e.detail.value;
+      this.setData({
+        foodName: value,
+      });
+    }
+  },
+  getFoodPrice(e) {
+    if (e.detail.value) {
+      let value = e.detail.value;
+      this.setData({
+        foodPrice: value,
+      });
+    }
+  },
 
+  getFoodIntroduce(e) {
+    if (e.detail.value) {
+      let value = e.detail.value;
+      this.setData({
+        foodIntroduce: value,
+      });
+    }
+  },
   getContent(e) {
     if (e.detail.value) {
       let value = e.detail.value;

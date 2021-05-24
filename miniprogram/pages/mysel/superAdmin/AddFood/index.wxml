@@ -116,14 +116,14 @@
   <view class="modelTitle">新增菜品</view>
   <view wx:for="{{0}}" data-i="{{groupindex}}" wx:for-index="groupindex" bindtap='updateInteractData'>
   </view>
-  <input bindinput='getTitle' style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{textimgTitle}}' placeholder="菜名" placeholder-style="color:#318FFF;" />
-  <input bindinput='getContent' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{message}}' placeholder="介绍" placeholder-style="color:#318FFF;" />
-   <input bindinput='getContent' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{message}}' placeholder="价格" placeholder-style="color:#318FFF;" />
+  <input bindinput='getFoodName' style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{foodName}}' placeholder="菜名" placeholder-style="color:#318FFF;" />
+  <input bindinput='getFoodIntroduce' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{foodIntroduce}}' placeholder="介绍" placeholder-style="color:#318FFF;" />
+   <input bindinput='getFoodPrice' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{foodPrice}}' placeholder="价格" placeholder-style="color:#318FFF;" />
   <input bindinput='getSrc' placeholder-style="color:#318FFF;" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{imgUrl}}' placeholder="图片src（可为空）" />
 
-  <button class="modelSubmitBtn" catchtap="addOneItem">本地上传图片并自动新增菜品</button>
+  <button class="modelSubmitBtn"  bindtap='uploadimg' >本地上传图片并自动新增菜品</button>
   <!-- <button class="modelSubmitBtn" catchtap="addOneItem">+1（不提交）</button> -->
-  <button class="modelSubmitBtn" catchtap="add">提交新增</button>
+  <button class="modelSubmitBtn" catchtap="addOneItem">提交新增</button>
   <!-- <button class="modelSubmitBtn" catchtap="add">提交新增</button> -->
   <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
 </view>

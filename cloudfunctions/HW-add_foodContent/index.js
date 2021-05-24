@@ -21,6 +21,7 @@ exports.main = async(event, context) => {
       isBot: true,
       content: event.contentData.content,
       textImgArray: event.contentData.textImgArray,
+      newFoodArray: event.contentData.newFoodArray,
       src: event.contentData.src,
       textimgTitle: event.contentData.textimgTitle,
       imgfile: event.contentData.imgfile,
