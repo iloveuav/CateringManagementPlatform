@@ -1,127 +1,134 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"appid": "wx796ecbe5abb047e5",
-	"projectname": "%E5%8F%A3%E8%AF%AD%E5%AD%A6%E4%B9%A0%E6%9C%BA%E5%99%A8%E4%BA%BA",
-	"libVersion": "2.10.3",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "pages/TalkBot/TalkBot",
-					"pathName": "pages/TalkBot/TalkBot",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/AddEngClassContent/AddEngClassContent",
-					"pathName": "pages/AddEngClassContent/AddEngClassContent",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/train/train",
-					"pathName": "pages/train/train",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mysel/admin/admin",
-					"pathName": "pages/mysel/admin/admin",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/courseBot/TalkBot",
-					"pathName": "pages/courseBot/TalkBot",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mysel/superAdmin/index",
-					"pathName": "pages/mysel/superAdmin/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/notification/notification",
-					"pathName": "pages/notification/notification",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mysel/superAdmin/AddFood/index",
-					"pathName": "pages/mysel/superAdmin/AddFood/index",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": false,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useApiHostProcess": true
+  },
+  "appid": "wx796ecbe5abb047e5",
+  "projectname": "%E5%8F%A3%E8%AF%AD%E5%AD%A6%E4%B9%A0%E6%9C%BA%E5%99%A8%E4%BA%BA",
+  "libVersion": "2.10.3",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/TalkBot/TalkBot",
+          "pathName": "pages/TalkBot/TalkBot",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/AddEngClassContent/AddEngClassContent",
+          "pathName": "pages/AddEngClassContent/AddEngClassContent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/train/train",
+          "pathName": "pages/train/train",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mysel/admin/admin",
+          "pathName": "pages/mysel/admin/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/courseBot/TalkBot",
+          "pathName": "pages/courseBot/TalkBot",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mysel/superAdmin/index",
+          "pathName": "pages/mysel/superAdmin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/notification/notification",
+          "pathName": "pages/notification/notification",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mysel/superAdmin/AddFood/index",
+          "pathName": "pages/mysel/superAdmin/AddFood/index",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

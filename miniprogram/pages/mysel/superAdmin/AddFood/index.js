@@ -175,7 +175,7 @@ Page({
             imgUrl: '',
             imageObject: '',
             message: '',
-            setTextImg: false,
+            addFoodCardView: false,
             textimgTitle: '',
             imgfile: '',
             btnDie: false,
@@ -300,7 +300,7 @@ Page({
               imgUrl: '',
               imageObject: '',
               message: '',
-              setTextImg: false,
+              addFoodCardView: false,
               textimgTitle: '',
               imgfile: '',
               btnDie: false,
@@ -563,15 +563,30 @@ Page({
     this.bottom();
   }
   },
-  //、、、、、设置图文
-  setTextImg() {
+  //、、、、、显示addFoodCard
+  showFoodCards() {
     if(!this.data.btnDie){
     this.setData({
-      setTextImg: true,
+      addFoodCardView: true,
       btnDie: true,
     });
     this.bottom();
+    // this.showAddFoodModal()
   }
+  },
+  //新增菜单模态框
+  showAddFoodModal() {
+    this.setData({
+      addFoodModalView: true,
+    });
+    this.bottom();
+  },
+  closeAddFoodCard() {
+    console.log("111")
+    this.setData({
+      addFoodCardView: false,
+      btnDie: false,
+    });
   },
   // 、、、、设置封面
   setFrontImg() {
@@ -801,14 +816,18 @@ Page({
   close(e) {
     this.setData({
       setwait: false,
-      setTextImg: false,
+      addFoodCardView: false,
       btnDie: false,
       setFrontImg: false,
     });
   },
 
-
-
+  closeAddFoodModal(){
+    this.setData({
+      addFoodModalView:false,
+      btnDie: false,
+    })
+  },
 
   // -------------辅助交互 自动化调用方法------------
 
@@ -818,8 +837,6 @@ Page({
     query.select('#hei').boundingClientRect() //获取节点位置信息的查询请求
     query.selectViewport().scrollOffset() //这段代码的意思是获取页面滑动位置的查询请求
     query.exec(function (res) {
-      console.log("function-bottom:", res)
-      console.log("function-bottom:", res[0].bottom)
       wx.pageScrollTo({
         // scrollTop: res[0].bottom  // #the-id节点的下边界坐标
         // scrollTop: res[0].bottom ,// #the-id节点的下边界坐标

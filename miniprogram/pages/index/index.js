@@ -143,7 +143,6 @@ Page({
     wx.cloud.init({
       env: 'talkbot-56sn5'
     })
-    wx.cloud.init()
     //  下面是云函数的调用
     // console.log(wx.getStorageSync("openid"));
     // console.log(this.data.classCollection);

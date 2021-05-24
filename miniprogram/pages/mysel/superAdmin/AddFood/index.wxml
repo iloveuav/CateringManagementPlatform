@@ -30,12 +30,12 @@
   <view class='top_txt'>喂食前请确保上方信息填写正确</view>
   <view class="historycon">
 
-   <view class="wordCard" wx:if="{{setTextImg}}">
+   <view class="wordCard" wx:if="{{addFoodCardView}}">
             <scroll-view style="height:100%">
               <!-- <wordCard allItem="{{item.textImgArray}}" bindspeach="speach">
               </wordCard> -->
 
-               <foodCard scenery="{{item}}" hotalArray="{{item.textImgArray}}" city="{{city}}" bindgetHotalId="getPKcityId"></foodCard>
+               <addFoodCard scenery="{{item}}" hotalArray="{{item.textImgArray}}" city="{{city}}" bindgetHotalId="getPKcityId" bind:showAddFoodModal="showAddFoodModal" bind:closeAddFoodCard="closeAddFoodCard" ></addFoodCard>
             </scroll-view>
              </view>
 
@@ -79,8 +79,8 @@
 </view>
 
 <view class="rightBtnItem">
-<image class="r-itemImgBox" catchtap="setTextImg" src="../../../../images/button/addTextImg.png"></image>
-<view class="r-itemName" catchtap="setTextImg">新增菜品</view>
+<image class="r-itemImgBox" catchtap="showFoodCards" src="../../../../images/button/addTextImg.png"></image>
+<view class="r-itemName" catchtap="showFoodCards">新增菜品</view>
 </view>
 
 </view>
@@ -111,8 +111,8 @@
 
 <view class='hei' id="hei"></view>
 <!-- -------------设置菜品参数区------------ -->
-<view class="setwaitData" style="flex-direction: column; " wx:if="{{setTextImg==='1'}}">
-  <image src="/images/button/cancel2.png" style='position:absoluted;' class="cancel" catchtap="close"></image>
+<view class="setwaitData" style="flex-direction: column; " wx:if="{{addFoodModalView}}">
+  <image src="/images/button/cancel2.png" style='position:absoluted;' class="cancel" catchtap="closeAddFoodModal"></image>
   <view class="modelTitle">新增菜品</view>
   <view wx:for="{{0}}" data-i="{{groupindex}}" wx:for-index="groupindex" bindtap='updateInteractData'>
   </view>
@@ -121,8 +121,10 @@
    <input bindinput='getContent' maxlength="1000" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{message}}' placeholder="价格" placeholder-style="color:#318FFF;" />
   <input bindinput='getSrc' placeholder-style="color:#318FFF;" style="max-width: 90%;" class="modelBtn" confirm-type="done" value='{{imgUrl}}' placeholder="图片src（可为空）" />
 
-  <button class="modelSubmitBtn" catchtap="addOneItem">+1（不提交）</button>
-  <button class="modelSubmitBtn" catchtap="add">提交</button>
+  <button class="modelSubmitBtn" catchtap="addOneItem">本地上传图片并自动新增菜品</button>
+  <!-- <button class="modelSubmitBtn" catchtap="addOneItem">+1（不提交）</button> -->
+  <button class="modelSubmitBtn" catchtap="add">提交新增</button>
+  <!-- <button class="modelSubmitBtn" catchtap="add">提交新增</button> -->
   <!-- <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" /> -->
 </view>
 <!-- ----------------设置图文参数区end--------------- -->

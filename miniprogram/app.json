@@ -5,13 +5,13 @@
     "pages/TakeOrderBot/TakeOrderBot",
     "pages/notification/notification",
     "pages/AddEngClassContent/AddEngClassContent",
- 
     "pages/mysel/admin/admin",
     "pages/mysel/superAdmin/index",
     "pages/mysel/superAdmin/editNda/index",
     "pages/mysel/superAdmin/setting/setting",
     "pages/mysel/superAdmin/admin/train/train",
-    "pages/mysel/superAdmin/AddFood/index"
+    "pages/mysel/superAdmin/AddFood/index",
+    "utils/types/SelfEmployed/SelfEmployedConfig.ts"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -55,8 +55,6 @@
       "provider": "wx65f00fe52f504192"
     }
   },
- 
-  
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

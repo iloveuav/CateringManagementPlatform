@@ -247,8 +247,6 @@ Page({
     query.select('#hei').boundingClientRect()//获取节点位置信息的查询请求
     query.selectViewport().scrollOffset()//这段代码的意思是获取页面滑动位置的查询请求
     query.exec(function (res) {
-      console.log("function-bottom:",res)
-      console.log("function-bottom:", res[0].bottom)
       wx.pageScrollTo({
         // scrollTop: res[0].bottom  // #the-id节点的下边界坐标
         // scrollTop: res[0].bottom ,// #the-id节点的下边界坐标
