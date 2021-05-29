@@ -120,13 +120,17 @@
 }
 
 .img{
-  /* border: 1px solid black; */
   height: 30%;
   width: 45%;
   margin: 5rpx;
   border-radius: 30rpx 30rpx 30rpx 30rpx;
-
   margin-bottom: 150rpx;
+}
+.foodImg{
+  height: 65%;
+  width: 95%;
+  margin: 5rpx;
+  border-radius: 30rpx 30rpx 30rpx 30rpx;
 }
 
 .cancelAddBtn{
@@ -189,9 +193,26 @@
   position: absolute;
   bottom: 2rpx;
   right: 10rpx;
-  
   border-radius: 20rpx;
   background-color: white;
+  box-shadow: 0 0 10rpx rgb(144, 196, 226);
+z-index: 999;
+font-size: 18rpx;
+width: 160rpx!important;
+height: 50rpx;
+}
+
+.submitBtnBox{
+  position: relative;
+  /* border: 1px solid black; */
+  height: 50px;
+  width: 100%;
+}
+.submitBtn{
+  margin: 0 auto;
+  transform: translateY(15px);
+  border-radius: 20rpx;
+  background-color: 0 0 10rpx rgb(41, 127, 177);
   box-shadow: 0 0 10rpx rgb(144, 196, 226);
 z-index: 999;
 font-size: 18rpx;

@@ -120,12 +120,10 @@
 }
 
 .img{
-  /* border: 1px solid black; */
   height: 65%;
   width: 95%;
   margin: 5rpx;
   border-radius: 30rpx 30rpx 30rpx 30rpx;
-  /* margin-bottom: 30rpx; */
 }
 
 .Title{
@@ -187,7 +185,6 @@ z-index: 999;
 font-size: 18rpx;
 width: 160rpx!important;
 height: 50rpx;
-
 }
 
 .checked{

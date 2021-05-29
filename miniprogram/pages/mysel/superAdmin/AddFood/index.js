@@ -17,7 +17,7 @@ Page({
     message: '',
     classId: '',
     className: '',
-    chapterName: '',
+    merchantName: '',
     value: '',
     imgUrl: '',
     textimgTitle: '',
@@ -117,7 +117,7 @@ Page({
     var newData = {
       foodName: this.data.foodName,
       foodPrice: this.data.foodPrice,
-      chapterName: this.data.chapterName,
+      // merchantName: this.data.merchantName,
       foodIntroduce: this.data.foodIntroduce,
       picSrc: this.data.imgUrl,
     }
@@ -133,6 +133,7 @@ Page({
       imageObject: '',
       answer: '',
     })
+    this.closeAddFoodModal()
   },
 
 
@@ -140,6 +141,7 @@ Page({
   //事件处理函数
   add: function (e) {
     var that = this;
+    this.finishAddFoodArrayFlag = true
     console.log("进入add函数")
     // 设置封面
     if (this.data.setFrontImg) {
@@ -232,7 +234,7 @@ Page({
           showCancel: false
         })
         return;
-      } else if (this.data.chapterName == '' && this.data.imgUrl == null) {
+      } else if (this.data.merchantName == '' && this.data.imgUrl == null) {
         wx.showModal({
           title: '提示',
           content: '章节名不能为空~',
@@ -267,7 +269,7 @@ Page({
           classId: parseInt(that.data.classId),
           className: that.data.className,
           classType: ClassCollection,
-          chapterName: this.data.chapterName,
+          merchantName: this.data.merchantName,
 
           detail: {},
           textimgTitle: that.data.textimgTitle,
@@ -370,7 +372,8 @@ Page({
           wx.showToast({
             title: '上传成功',
             icon: 'success',
-            duration: 1000
+            duration: 1000,
+            mask:true
           })
           console.log('that.data.textimgTitle');
           console.log(this.data.textimgTitle);
@@ -410,6 +413,7 @@ Page({
 
     wx.showLoading({
       title: '上传中',
+      mask:true
     })
     var that = this;
     // ===============上传图片==================
@@ -487,7 +491,8 @@ Page({
         wx.showToast({
           title: '上传成功2',
           icon: 'success',
-          duration: 1000
+          duration: 1000,
+          mask:true
         })
 
       },
@@ -596,7 +601,6 @@ Page({
     this.bottom();
   },
   closeAddFoodCard() {
-    console.log("111")
     this.setData({
       addFoodCardView: false,
       btnDie: false,
@@ -785,7 +789,7 @@ Page({
       classCollection: ClassCollection,
       classId: parseInt(this.data.classId),
       className: this.data.className,
-      chapterName: this.data.chapterName,
+      merchantName: this.data.merchantName,
 
       detail: {
         btnNum: this.data.btnNum,
@@ -896,7 +900,7 @@ Page({
     this.data.className = e.detail.value
   },
   bindChange3: function (e) {
-    this.data.chapterName = e.detail.value
+    this.data.merchantName = e.detail.value
   },
 
   preimage(e) {
@@ -930,7 +934,7 @@ Page({
         showCancel: false
       })
       return;
-    } else if (this.data.chapterName == '') {
+    } else if (this.data.merchantName == '') {
       wx.showModal({
         title: '提示',
         content: '章节名不能为空',
@@ -966,7 +970,7 @@ Page({
                 classCollection: ClassCollection,
                 classId: parseInt(that.data.classId),
                 className: that.data.className,
-                chapterName: that.data.chapterName,
+                merchantName: that.data.merchantName,
               },
               success: res => {
                 wx.showModal({

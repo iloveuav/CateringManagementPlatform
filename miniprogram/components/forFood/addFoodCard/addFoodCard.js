@@ -13,6 +13,10 @@ Component({
       type: Object,
       value: '数据加载有误',
     },
+    newFoodArray: {
+      type: Array,
+      value: '数据加载有误',
+    },
    city: {
       type: String,
       value: '数据加载有误',
@@ -25,7 +29,8 @@ Component({
    */
   data: {
     HotelId:0,
-    checked:false
+    checked:false,
+    finishAddFoodArrayFlag:false
   },
 
   /**
@@ -57,6 +62,10 @@ Component({
     },
     closeAddFoodCard(e){
       this.triggerEvent('closeAddFoodCard')
+    },
+
+    finishAddFoodArray(){
+      this.finishAddFoodArrayFlag = true
     }
 
   }

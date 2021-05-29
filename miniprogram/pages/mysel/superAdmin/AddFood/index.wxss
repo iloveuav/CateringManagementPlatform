@@ -420,6 +420,20 @@ button[disabled] {
   z-index: 99999;
 }
 
+.add_btn{
+  position: absolute;
+  bottom: 2rpx;
+  right: 10rpx;
+
+  border-radius: 20rpx;
+  background-color: white;
+  box-shadow: 0 0 10rpx rgb(144, 196, 226);
+z-index: 999;
+font-size: 18rpx;
+width: 160rpx!important;
+height: 50rpx;
+}
+
 .modelTitle{
   font-size: 30rpx;
   color: #000;

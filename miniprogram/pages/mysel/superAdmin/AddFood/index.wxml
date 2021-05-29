@@ -18,7 +18,7 @@
 
     <view class="btn-item">
       <text class="chapterKey" >商户名</text>
-      <input class="input" bindinput="bindChange3" confirm-type="done" value='{{chapterName}}' placeholder="eg:新梅园大酒店" />
+      <input class="input" bindinput="bindChange3" confirm-type="done" value='{{merchantName}}' placeholder="eg:新梅园大酒店" />
     </view>
   </view>
 
@@ -35,7 +35,7 @@
               <!-- <wordCard allItem="{{item.textImgArray}}" bindspeach="speach">
               </wordCard> -->
 
-               <addFoodCard scenery="{{item}}" hotalArray="{{item.textImgArray}}" city="{{city}}" bindgetHotalId="getPKcityId" bind:showAddFoodModal="showAddFoodModal" bind:closeAddFoodCard="closeAddFoodCard" ></addFoodCard>
+               <addFoodCard scenery="{{item}}" hotalArray="{{item.textImgArray}}" newFoodArray="{{newFoodArray}}" city="{{city}}" bindgetHotalId="getPKcityId" bind:showAddFoodModal="showAddFoodModal" bind:closeAddFoodCard="closeAddFoodCard"  ></addFoodCard>
             </scroll-view>
              </view>
 

@@ -16,17 +16,17 @@
             </view>
             </swiper-item>
 
-        <block wx:for="{{hotalArray}}" wx:key="index" wx:for-index="index"  bindtap="getCityId" data-hotelId="{{item.hotelId}}" data-index='{{index}}' >
+        <block wx:for="{{newFoodArray}}" wx:key="index" wx:for-index="index"  bindtap="getCityId" data-hotelId="{{item.hotelId}}" data-index='{{index}}' >
           <swiper-item  data-i="{{index}}" data-hotelId="{{item.hotelId}}" bindtap='getHotelId'>
 
     
             <view class="Card">
             <view class="Title" style=" "></view>
-            <image class="img"  src="{{item.src}}"> </image>      
+            <image class="foodImg"  src="{{item.picSrc}}"> </image>      
            <view class="bottomText" style="margin-left:10rpx;">  
-           <view>{{item.textimgTitle}}</view>
-           <view>￥9.9{{item.lowestPrice}}</view>
-            <button class="add_btn {{checked&&item.classId== HotelId? 'checked' : ''}}" bindtap="addCityToPK" >加入🛒</button>
+           <view>{{item.foodName}}</view>
+           <view><text class="money">￥</text>{{item.foodPrice}}</view>
+            <button class="add_btn {{checked&&item.classId== HotelId? 'checked' : ''}}" bindtap="addCityToPK" >删除❌</button>
            </view>
             </view>
           </swiper-item>
@@ -39,4 +39,6 @@
 
      </view>
  <view class="line"></view>
+ <view class="submitBtnBox" style="position:relative">    <button class="submitBtn" disabled="{{finishAddFoodArrayFlag}}" bindtap="addCityToPK" >提交🥗</button> </view>
+
     </view>
